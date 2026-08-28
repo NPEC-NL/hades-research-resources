@@ -157,13 +157,14 @@ Automated root phenotyping platforms generate large, time-resolved image collect
 
 ### psi_export_rebuilder
 
-**Repository:** **GitHub URL to add**
+**Repository:** https://github.com/NPEC-NL/psi-export-rebuilder
 
 Uses readable PlantScreen user exports as the public-release source; inventories records, preserves Measurement/Analysis structure, converts supported tables, creates manifests and hashes, integrates reviewed metadata and package-scoped registry definitions, and retains mappings to facility-side representations. System-specific source rules are isolated in adapters so the generic release workflow can be reused.
 
 ### HADES variable registry
 
-**Registry:** **registry URL to add**
+**Registry:** https://github.com/NPEC-NL/hades-registry  
+**Current frozen version:** `1.0.0`
 
 Versioned definitions for variables produced by PlantScreen Data Analyzer, Boxeed and custom ROOT, fluorescence and VNIR pipelines. Entries describe stable identity, source software, type/scale, acquisition method, observation level and trait or ontology mappings; experiment packages include the relevant registry subset.
 

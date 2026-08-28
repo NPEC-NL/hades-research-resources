@@ -23,6 +23,10 @@
     h2 { margin: 50px 0 18px; padding-bottom: 8px; border-bottom: 1px solid var(--border); font-size: 1.48rem; }
     h3 { margin: 32px 0 12px; font-size: 1.18rem; }
     h4 { margin: 0 0 10px; font-size: 1.02rem; }
+    h5 { margin: 20px 0 8px; font-size: 0.98rem; }
+    .source-list { margin: 8px 0 0 20px; padding: 0; }
+    .source-list li { margin: 7px 0; }
+    code { font-size: 0.93em; }
     p { margin: 0 0 13px; }
     a { color: var(--link); text-underline-offset: 2px; }
     .lead { max-width: 860px; color: var(--muted); font-size: 1.04rem; }
@@ -94,6 +98,12 @@
           <dt>Acquisition</dt><dd>Repeated transmitted-light RootCam imaging provides root and shoot morphology, while fluorescence imaging follows coumarin-associated signal over time.</dd>
           <dt>Primary reusable content</dt><dd>Root/shoot masks and organ- or ROI-specific measurements support longitudinal root architecture traits and fluorescence quantification in the primary root, lateral roots, peri-root/rhizosphere region and shoot.</dd>
           <dt>Method-paper relationship</dt><dd>Supports the root-architecture and coumarin-associated fluorescence demonstrations; associated time-lapse videos are Supplementary Videos S2 and S5.</dd>
+        <h5>Method paper figure source</h5>
+        <p>Direct source tables used for the Exp32 method-paper figures are stored in <code>/source</code>:</p>
+        <ul class="source-list">
+          <li><a href="../source/masterfile-exp32-cumarins_FC1.xlsx"><code>masterfile-exp32-cumarins_FC1.xlsx</code></a> — longitudinal Exp32 master table containing the morphology/fluorescence measurements used for the root-architecture and coumarin-associated fluorescence figure outputs.</li>
+          <li><a href="../source/exp32_auc_results.csv"><code>exp32_auc_results.csv</code></a> — area-under-the-curve statistical results used for longitudinal Exp32 comparisons.</li>
+        </ul>
         </dl>
       </section>
       <section class="dataset-entry" id="exp35">
@@ -106,6 +116,12 @@
           <dt>Acquisition</dt><dd>RootCam morphology and mCherry fluorescence are acquired repeatedly to follow root development and bacterial signal along the root system.</dd>
           <dt>Primary reusable content</dt><dd>The main quantitative readout is mCherry fluorescence along the primary-root ROI, enabling comparison of host-genotype- and bacterial-strain-dependent colonization dynamics.</dd>
           <dt>Method-paper relationship</dt><dd>Supports the potato root-colonization experiment and Supplementary Video S4.</dd>
+        <h5>Method paper figure source</h5>
+        <p>Direct source tables used for the Exp35 method-paper figure are stored in <code>/source</code>:</p>
+        <ul class="source-list">
+          <li><a href="../source/masterfile_Exp35_FC2_V2.xlsx"><code>masterfile_Exp35_FC2_V2.xlsx</code></a> — longitudinal potato root-colonization master table used for the fluorescence-based colonization figure.</li>
+          <li><a href="../source/Exp35_auc_tukey.csv"><code>Exp35_auc_tukey.csv</code></a> — area-under-the-curve and Tukey multiple-comparison results used for the Exp35 statistical comparisons.</li>
+        </ul>
         </dl>
       </section>
       <section class="dataset-entry" id="exp44">
@@ -118,6 +134,15 @@
           <dt>Acquisition</dt><dd>Repeated root morphology and bacterial fluorescence imaging are processed through the HADES segmentation and analysis workflow.</dd>
           <dt>Primary reusable content</dt><dd>Fifteen morphological and fluorescence parameters capture root architecture, shoot growth and bacterial colonization. The proof-of-concept analysis emphasizes primary-root size and mean fluorescence of the primary root to identify candidate outliers.</dd>
           <dt>Method-paper relationship</dt><dd>Supports the high-throughput WCS417 mutant-screen demonstration and the candidate-mutant supplementary table.</dd>
+        <h5>Method paper figure source</h5>
+        <p>The direct source table used for the Exp44 method-paper screening figure is stored in <code>/source</code>:</p>
+        <ul class="source-list">
+          <li><a href="../source/masterfile_exp44_FC1_filled_7DAI_corrected_with_P3map_checked_7only.xlsx"><code>masterfile_exp44_FC1_filled_7DAI_corrected_with_P3map_checked_7only.xlsx</code></a> — curated seven-day screening master table used to generate the WCS417 transposon-mutant phenotyping figure, including root-growth and fluorescence readouts.</li>
+        </ul>
+        <h5>Sequence data</h5>
+        <p><strong>GFP-labelled</strong> <strong><em>Pseudomonas simiae</em></strong> <strong>WCS417 mariner transposon mutants</strong></p>
+        <p><a href="../source/EC00167691.zip"><code>EC00167691.zip</code></a></p>
+        <p>Raw Sanger sequencing data for the 96 GFP-labelled <em>P. simiae</em> WCS417 mariner transposon mutants. Individual sequence files are labelled according to the position of each mutant in the 96-well screening plate. The corresponding transposon-disrupted genes and mutant annotations are provided in Supplementary Table S4.</p>
         </dl>
       </section>
       <section class="dataset-entry" id="exp62">
@@ -130,6 +155,12 @@
           <dt>Acquisition</dt><dd>The HADES hyperspectral unit records visible-to-near-infrared data across 380–900 nm, with BIL/HDR data and calibration companions. The method-paper analysis extracts fluorescence-emission profiles from root and surrounding dilated-root regions, focusing on the 425–600 nm range.</dd>
           <dt>Primary reusable content</dt><dd>Wavelength-resolved root and peri-root spectra are used to compare genotype-specific coumarin-associated emission profiles. The associated Boxeed records capture seed images and morphology/selection information before sowing.</dd>
           <dt>Method-paper relationship</dt><dd>Supports the hyperspectral coumarin-emission experiment and the Boxeed seed-imaging component.</dd>
+        <h5>Method paper figure source</h5>
+        <p>Direct source tables used for the Exp62 method-paper hyperspectral figure are stored in <code>/source</code>:</p>
+        <ul class="source-list">
+          <li><a href="../source/masterfile_Exp62_VNIR_root_4genotype.csv"><code>masterfile_Exp62_VNIR_root_4genotype.csv</code></a> — wavelength-resolved VNIR fluorescence measurements extracted from the root region across the four-genotype Exp62 dataset.</li>
+          <li><a href="../source/masterfile_Exp62_VNIR_rhizosphere_4genotype.csv"><code>masterfile_Exp62_VNIR_rhizosphere_4genotype.csv</code></a> — wavelength-resolved VNIR fluorescence measurements extracted from the dilated peri-root/rhizosphere region across the four-genotype Exp62 dataset.</li>
+        </ul>
         </dl>
       </section>
       <section class="dataset-entry" id="exp68">
@@ -142,6 +173,13 @@
           <dt>Acquisition</dt><dd>RootCam morphology images provide the segmentation masks used to define root regions, while mCherry and mTurquoise2 fluorescence channels report bacterial colonization and auxin-responsive host signalling.</dd>
           <dt>Primary reusable content</dt><dd>Channel-specific fluorescence is quantified along the primary root over time, allowing spatial and temporal comparison of microbial colonization with auxin-responsive reporter activity.</dd>
           <dt>Method-paper relationship</dt><dd>Supports the dual-channel fluorescence experiment and Supplementary Video S3.</dd>
+        <h5>Method paper figure source</h5>
+        <p>Direct source tables used for the Exp68 method-paper dual-channel fluorescence figure are stored in <code>/source</code>:</p>
+        <ul class="source-list">
+          <li><a href="../source/masterfile_exp68_FC1_mTurquoise_25DAG.xlsx"><code>masterfile_exp68_FC1_mTurquoise_25DAG.xlsx</code></a> — longitudinal mTurquoise2 reporter measurements used for the auxin-responsive fluorescence analysis.</li>
+          <li><a href="../source/masterfile_exp68_mcheery_FC2.xlsx"><code>masterfile_exp68_mcheery_FC2.xlsx</code></a> — longitudinal mCherry-channel measurements used for WCS417 bacterial-colonization analysis.</li>
+          <li><a href="../source/exp68_auc_results_bacteria_FC2.csv"><code>exp68_auc_results_bacteria_FC2.csv</code></a> — area-under-the-curve statistical results for the Exp68 bacterial fluorescence comparisons.</li>
+        </ul>
         </dl>
       </section>
   </section>
@@ -150,7 +188,8 @@
     <h2>Analysis code</h2>
     <section class="code-entry">
       <h4>ROOT / root architecture analysis pipeline</h4>
-      <p><strong>Repository:</strong> <span class="pending">GitHub URL to add</span></p>
+      <p><strong>Repository (fixed frozen branch):</strong> <a href="https://github.com/NPEC-NL/pyphenotyper/tree/hades-paper-frozen">github.com/NPEC-NL/pyphenotyper/tree/hades-paper-frozen</a></p>
+      <p><strong>Frozen archive DOI:</strong> <span class="pending">awaiting final confirmation</span>. The <code>hades-paper-frozen</code> branch and repository URL are fixed for the method-paper release.</p>
       <p>The root-analysis workflow processes monochromatic backlit RootCam images. It detects and crops individual plates, segments seedling structures with a U-Net-based model, skeletonizes root masks and converts them to graph representations. The primary root is reconstructed using Dijkstra’s shortest-path algorithm between the root-shoot junction and primary-root tip. Derived traits include shoot size, primary-root length, lateral-root length, lateral-root number, nodes and tips, providing the structural masks and landmarks also reused by fluorescence and hyperspectral analyses.</p>
     </section>
     <section class="code-entry">
@@ -206,7 +245,7 @@
         <span>Utrecht University</span>
       </a>
       <a href="https://psi.cz/" aria-label="Photon Systems Instruments">
-        <img class="psi" src="https://psi.cz/images/logo.png" alt="PSI logo">
+        <img class="psi" src="https://psi.cz/favicon.ico" alt="PSI logo">
         <span>Photon Systems Instruments</span>
       </a>
     </div>

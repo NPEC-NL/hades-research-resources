@@ -30,6 +30,13 @@ High-throughput analysis of root system architecture and plant-microbe interacti
 - **Primary reusable content:** Root/shoot masks and organ- or ROI-specific measurements support longitudinal root architecture traits and fluorescence quantification in the primary root, lateral roots, peri-root/rhizosphere region and shoot.
 - **Method-paper relationship:** Supports the root-architecture and coumarin-associated fluorescence demonstrations; associated time-lapse videos are Supplementary Videos S2 and S5.
 
+#### Method paper figure source
+
+Direct source tables used for the Exp32 method-paper figures are stored under [`/source`](source/):
+
+- [`masterfile-exp32-cumarins_FC1.xlsx`](source/masterfile-exp32-cumarins_FC1.xlsx) — longitudinal Exp32 master table containing the morphology/fluorescence measurements used for the root-architecture and coumarin-associated fluorescence figure outputs.
+- [`exp32_auc_results.csv`](source/exp32_auc_results.csv) — area-under-the-curve statistical results used for longitudinal Exp32 comparisons.
+
 ### Exp35 — Potato root-colonization dynamics under WCS417-mCherry and WCS358-mCherry inoculation
 
 **Dataset:** **DOI / repository URL to add**  
@@ -40,6 +47,13 @@ High-throughput analysis of root system architecture and plant-microbe interacti
 - **Acquisition:** RootCam morphology and mCherry fluorescence are acquired repeatedly to follow root development and bacterial signal along the root system.
 - **Primary reusable content:** The main quantitative readout is mCherry fluorescence along the primary-root ROI, enabling comparison of host-genotype- and bacterial-strain-dependent colonization dynamics.
 - **Method-paper relationship:** Supports the potato root-colonization experiment and Supplementary Video S4.
+
+#### Method paper figure source
+
+Direct source tables used for the Exp35 method-paper figure are stored under [`/source`](source/):
+
+- [`masterfile_Exp35_FC2_V2.xlsx`](source/masterfile_Exp35_FC2_V2.xlsx) — longitudinal potato root-colonization master table used for the fluorescence-based colonization figure.
+- [`Exp35_auc_tukey.csv`](source/Exp35_auc_tukey.csv) — area-under-the-curve and Tukey multiple-comparison results used for the Exp35 statistical comparisons.
 
 ### Exp44 — Arabidopsis Col-0 screen of GFP-labelled WCS417 transposon mutants
 
@@ -52,6 +66,20 @@ High-throughput analysis of root system architecture and plant-microbe interacti
 - **Primary reusable content:** Fifteen morphological and fluorescence parameters capture root architecture, shoot growth and bacterial colonization. The proof-of-concept analysis emphasizes primary-root size and mean fluorescence of the primary root to identify candidate outliers.
 - **Method-paper relationship:** Supports the high-throughput WCS417 mutant-screen demonstration and the candidate-mutant supplementary table.
 
+#### Method paper figure source
+
+The direct source table used for the Exp44 method-paper screening figure is stored under [`/source`](source/):
+
+- [`masterfile_exp44_FC1_filled_7DAI_corrected_with_P3map_checked_7only.xlsx`](source/masterfile_exp44_FC1_filled_7DAI_corrected_with_P3map_checked_7only.xlsx) — curated seven-day screening master table used to generate the WCS417 transposon-mutant phenotyping figure, including root-growth and fluorescence readouts.
+
+#### Sequence data
+
+**GFP-labelled** ***Pseudomonas simiae*** **WCS417 mariner transposon mutants**
+
+[`EC00167691.zip`](source/EC00167691.zip)
+
+Raw Sanger sequencing data for the 96 GFP-labelled *P. simiae* WCS417 mariner transposon mutants. Individual sequence files are labelled according to the position of each mutant in the 96-well screening plate. The corresponding transposon-disrupted genes and mutant annotations are provided in Supplementary Table S4.
+
 ### Exp62 — Arabidopsis VNIR hyperspectral coumarin-emission profiling with Boxeed seed imaging component
 
 **Dataset:** **DOI / repository URL to add**  
@@ -62,6 +90,13 @@ High-throughput analysis of root system architecture and plant-microbe interacti
 - **Acquisition:** The HADES hyperspectral unit records visible-to-near-infrared data across 380–900 nm, with BIL/HDR data and calibration companions. The method-paper analysis extracts fluorescence-emission profiles from root and surrounding dilated-root regions, focusing on the 425–600 nm range.
 - **Primary reusable content:** Wavelength-resolved root and peri-root spectra are used to compare genotype-specific coumarin-associated emission profiles. The associated Boxeed records capture seed images and morphology/selection information before sowing.
 - **Method-paper relationship:** Supports the hyperspectral coumarin-emission experiment and the Boxeed seed-imaging component.
+
+#### Method paper figure source
+
+Direct source tables used for the Exp62 method-paper hyperspectral figure are stored under [`/source`](source/):
+
+- [`masterfile_Exp62_VNIR_root_4genotype.csv`](source/masterfile_Exp62_VNIR_root_4genotype.csv) — wavelength-resolved VNIR fluorescence measurements extracted from the root region across the four-genotype Exp62 dataset.
+- [`masterfile_Exp62_VNIR_rhizosphere_4genotype.csv`](source/masterfile_Exp62_VNIR_rhizosphere_4genotype.csv) — wavelength-resolved VNIR fluorescence measurements extracted from the dilated peri-root/rhizosphere region across the four-genotype Exp62 dataset.
 
 ### Exp68 — Arabidopsis DR5v2/WCS417-mCherry dual-channel fluorescence assay
 
@@ -74,11 +109,20 @@ High-throughput analysis of root system architecture and plant-microbe interacti
 - **Primary reusable content:** Channel-specific fluorescence is quantified along the primary root over time, allowing spatial and temporal comparison of microbial colonization with auxin-responsive reporter activity.
 - **Method-paper relationship:** Supports the dual-channel fluorescence experiment and Supplementary Video S3.
 
+#### Method paper figure source
+
+Direct source tables used for the Exp68 method-paper dual-channel fluorescence figure are stored under [`/source`](source/):
+
+- [`masterfile_exp68_FC1_mTurquoise_25DAG.xlsx`](source/masterfile_exp68_FC1_mTurquoise_25DAG.xlsx) — longitudinal mTurquoise2 reporter measurements used for the auxin-responsive fluorescence analysis.
+- [`masterfile_exp68_mcheery_FC2.xlsx`](source/masterfile_exp68_mcheery_FC2.xlsx) — longitudinal mCherry-channel measurements used for WCS417 bacterial-colonization analysis.
+- [`exp68_auc_results_bacteria_FC2.csv`](source/exp68_auc_results_bacteria_FC2.csv) — area-under-the-curve statistical results for the Exp68 bacterial fluorescence comparisons.
+
 ## Analysis code
 
 ### ROOT / root architecture analysis pipeline
 
-**Repository:** **GitHub URL to add**
+**Repository (fixed frozen branch):** https://github.com/NPEC-NL/pyphenotyper/tree/hades-paper-frozen  
+**Frozen archive DOI:** awaiting final confirmation. The `hades-paper-frozen` branch and repository URL above are fixed for the method-paper release.
 
 Processes monochromatic backlit RootCam images through plate detection/cropping, U-Net-based seedling segmentation, skeletonization and graph-based root reconstruction. Dijkstra’s shortest-path algorithm reconstructs the primary root between the root-shoot junction and primary-root tip. Outputs include shoot size, primary-root length, lateral-root length, lateral-root number, nodes and tips, together with structural masks reused by the fluorescence and hyperspectral workflows.
 

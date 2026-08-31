@@ -21,7 +21,8 @@ High-throughput analysis of root system architecture and plant-microbe interacti
 
 ### Exp32 — Arabidopsis coumarin-genotype root architecture and fluorescence dynamics
 
-**Dataset:** **DOI / repository URL to add**  
+**Dataset:** https://doi.org/10.5281/zenodo.22148825  
+**DOI:** `10.5281/zenodo.22148825`  
 **Release scope:** Arabidopsis reference record
 
 - **Biological material:** Arabidopsis thaliana Col-0 and the coumarin-biosynthesis mutants f6'h1, cyp82c4 and s8h.
@@ -100,7 +101,8 @@ Direct source tables used for the Exp62 method-paper hyperspectral figure are st
 
 ### Exp68 — Arabidopsis DR5v2/WCS417-mCherry dual-channel fluorescence assay
 
-**Dataset:** **DOI / repository URL to add**  
+**Dataset:** https://doi.org/10.5281/zenodo.22181454  
+**DOI:** `10.5281/zenodo.22181454`  
 **Release scope:** Arabidopsis reference record
 
 - **Biological material:** Arabidopsis thaliana Col-0 and DR5v2::mTurquoise2 reporter seedlings.
@@ -157,7 +159,9 @@ Automated root phenotyping platforms generate large, time-resolved image collect
 
 ### psi_export_rebuilder
 
-**Repository:** https://github.com/NPEC-NL/psi-export-rebuilder
+**GitHub repository:** https://github.com/NPEC-NL/psi-export-rebuilder  
+**Frozen version used to create the datasets:** https://doi.org/10.5281/zenodo.22213177  
+**Frozen DOI:** `10.5281/zenodo.22213177`
 
 Uses readable PlantScreen user exports as the public-release source; inventories records, preserves Measurement/Analysis structure, converts supported tables, creates manifests and hashes, integrates reviewed metadata and package-scoped registry definitions, and retains mappings to facility-side representations. System-specific source rules are isolated in adapters so the generic release workflow can be reused.
 

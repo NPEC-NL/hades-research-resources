@@ -21,6 +21,9 @@ High-throughput analysis of root system architecture and plant-microbe interacti
 
 ### Exp32 — Arabidopsis coumarin-genotype root architecture and fluorescence dynamics
 
+> [!IMPORTANT]
+> **Method-paper relationship:** Figures 2 and 6: longitudinal root-system architecture and coumarin-associated fluorescence in Arabidopsis coumarin-biosynthesis genotypes; Supplementary Videos S2 and S5.
+
 **Dataset:** https://doi.org/10.5281/zenodo.22148825  
 **DOI:** `10.5281/zenodo.22148825`  
 **Release scope:** Arabidopsis reference record
@@ -29,7 +32,6 @@ High-throughput analysis of root system architecture and plant-microbe interacti
 - **Experimental design:** Longitudinal in vitro phenotyping under iron deficiency. Plants are grown on iron-deficient Hoagland medium with Fe-EDTA omitted, solidified with 0.8% Gelrite at pH 7.3.
 - **Acquisition:** Repeated transmitted-light RootCam imaging provides root and shoot morphology, while fluorescence imaging follows coumarin-associated signal over time.
 - **Primary reusable content:** Root/shoot masks and organ- or ROI-specific measurements support longitudinal root architecture traits and fluorescence quantification in the primary root, lateral roots, peri-root/rhizosphere region and shoot.
-- **Method-paper relationship:** Supports the root-architecture and coumarin-associated fluorescence demonstrations; associated time-lapse videos are Supplementary Videos S2 and S5.
 
 #### Method paper figure source
 
@@ -40,14 +42,17 @@ Direct source tables used for the Exp32 method-paper figures are stored under [`
 
 ### Exp35 — Potato root-colonization dynamics under WCS417-mCherry and WCS358-mCherry inoculation
 
-**Dataset:** **DOI / repository URL to add**  
+> [!IMPORTANT]
+> **Method-paper relationship:** Figure 4: fluorescence-based quantification of bacterial colonization dynamics on potato roots; Supplementary Video S4.
+
+**Dataset:** https://doi.org/10.5281/zenodo.22282859  
+**DOI:** `10.5281/zenodo.22282859`  
 **Release scope:** Separate potato public record
 
 - **Biological material:** Solanum tuberosum true-potato-seed genotypes HYB007 and RP043.
 - **Experimental design:** Longitudinal plant-microbe colonization assay with mock, Pseudomonas simiae WCS417-mCherry or Pseudomonas capeferrum WCS358-mCherry treatments. Bacteria are applied as a 10-µL droplet at OD600 = 0.1 to the root-shoot junction; plants are grown on 1/2 MS without sucrose and with 0.8% Gelrite.
 - **Acquisition:** RootCam morphology and mCherry fluorescence are acquired repeatedly to follow root development and bacterial signal along the root system.
 - **Primary reusable content:** The main quantitative readout is mCherry fluorescence along the primary-root ROI, enabling comparison of host-genotype- and bacterial-strain-dependent colonization dynamics.
-- **Method-paper relationship:** Supports the potato root-colonization experiment and Supplementary Video S4.
 
 #### Method paper figure source
 
@@ -58,6 +63,9 @@ Direct source tables used for the Exp35 method-paper figure are stored under [`/
 
 ### Exp44 — Arabidopsis Col-0 screen of GFP-labelled WCS417 transposon mutants
 
+> [!IMPORTANT]
+> **Method-paper relationship:** Figure 5: high-throughput screening of GFP-labelled WCS417 transposon mutants for altered root-colonization and root-development phenotypes; Supplementary Table S4 provides annotations for sequenced candidate mutants.
+
 **Dataset:** **DOI / repository URL to add**  
 **Release scope:** Separate WCS417 transposon-screen public record
 
@@ -65,7 +73,6 @@ Direct source tables used for the Exp35 method-paper figure are stored under [`/
 - **Experimental design:** High-throughput longitudinal screen of a non-saturating collection of 480 random mutants, with mock controls. Individual mutants are applied robotically; the method paper reports inoculum adjusted to OD600 = 0.001 and daily imaging over seven days.
 - **Acquisition:** Repeated root morphology and bacterial fluorescence imaging are processed through the HADES segmentation and analysis workflow.
 - **Primary reusable content:** Fifteen morphological and fluorescence parameters capture root architecture, shoot growth and bacterial colonization. The proof-of-concept analysis emphasizes primary-root size and mean fluorescence of the primary root to identify candidate outliers.
-- **Method-paper relationship:** Supports the high-throughput WCS417 mutant-screen demonstration and the candidate-mutant supplementary table.
 
 #### Method paper figure source
 
@@ -83,6 +90,9 @@ Raw Sanger sequencing data for the 96 GFP-labelled *P. simiae* WCS417 mariner tr
 
 ### Exp62 — Arabidopsis VNIR hyperspectral coumarin-emission profiling with Boxeed seed imaging component
 
+> [!IMPORTANT]
+> **Method-paper relationship:** Figure 7: VNIR hyperspectral discrimination of genotype-specific coumarin-associated emission profiles; the experiment also contains the Boxeed seed-imaging component used for Supplementary Figure S2.
+
 **Dataset:** **DOI / repository URL to add**  
 **Release scope:** Arabidopsis reference record
 
@@ -90,7 +100,6 @@ Raw Sanger sequencing data for the 96 GFP-labelled *P. simiae* WCS417 mariner tr
 - **Experimental design:** VNIR hyperspectral fluorescence-emission profiling is combined with RootCam/mask context where applicable. Boxeed seed-imaging and selection records are treated as a component of the same experiment where present.
 - **Acquisition:** The HADES hyperspectral unit records visible-to-near-infrared data across 380–900 nm, with BIL/HDR data and calibration companions. The method-paper analysis extracts fluorescence-emission profiles from root and surrounding dilated-root regions, focusing on the 425–600 nm range.
 - **Primary reusable content:** Wavelength-resolved root and peri-root spectra are used to compare genotype-specific coumarin-associated emission profiles. The associated Boxeed records capture seed images and morphology/selection information before sowing.
-- **Method-paper relationship:** Supports the hyperspectral coumarin-emission experiment and the Boxeed seed-imaging component.
 
 #### Method paper figure source
 
@@ -101,6 +110,9 @@ Direct source tables used for the Exp62 method-paper hyperspectral figure are st
 
 ### Exp68 — Arabidopsis DR5v2/WCS417-mCherry dual-channel fluorescence assay
 
+> [!IMPORTANT]
+> **Method-paper relationship:** Figure 3: dual-channel fluorescence imaging of auxin-responsive DR5v2::mTurquoise2 signalling and WCS417-mCherry colonization; Supplementary Video S3.
+
 **Dataset:** https://doi.org/10.5281/zenodo.22181454  
 **DOI:** `10.5281/zenodo.22181454`  
 **Release scope:** Arabidopsis reference record
@@ -109,7 +121,6 @@ Direct source tables used for the Exp62 method-paper hyperspectral figure are st
 - **Experimental design:** Longitudinal dual-fluorescence plant-microbe assay comparing mock treatment with Pseudomonas simiae WCS417-mCherry. The bacterial treatment is incorporated into the medium at 10^5 CFU/mL; seedlings are grown on standard Hoagland medium solidified with 0.8% Gelrite.
 - **Acquisition:** RootCam morphology images provide the segmentation masks used to define root regions, while mCherry and mTurquoise2 fluorescence channels report bacterial colonization and auxin-responsive host signalling.
 - **Primary reusable content:** Channel-specific fluorescence is quantified along the primary root over time, allowing spatial and temporal comparison of microbial colonization with auxin-responsive reporter activity.
-- **Method-paper relationship:** Supports the dual-channel fluorescence experiment and Supplementary Video S3.
 
 #### Method paper figure source
 
@@ -124,7 +135,9 @@ Direct source tables used for the Exp68 method-paper dual-channel fluorescence f
 ### ROOT / root architecture analysis pipeline
 
 **Repository (fixed frozen branch):** https://github.com/NPEC-NL/pyphenotyper/tree/hades-paper-frozen  
-**Frozen archive DOI:** awaiting final confirmation. The `hades-paper-frozen` branch and repository URL above are fixed for the method-paper release.
+**Frozen release page:** https://github.com/NPEC-NL/pyphenotyper/releases/tag/hades-method-submission-2026-08-26  
+**Frozen archive DOI:** https://doi.org/10.5281/zenodo.22283634  
+**DOI:** `10.5281/zenodo.22283634`
 
 Processes monochromatic backlit RootCam images through plate detection/cropping, U-Net-based seedling segmentation, skeletonization and graph-based root reconstruction. Dijkstra’s shortest-path algorithm reconstructs the primary root between the root-shoot junction and primary-root tip. Outputs include shoot size, primary-root length, lateral-root length, lateral-root number, nodes and tips, together with structural masks reused by the fluorescence and hyperspectral workflows.
 
@@ -177,5 +190,6 @@ Versioned definitions for variables produced by PlantScreen Data Analyzer, Boxee
 1. **Netherlands Plant Eco-phenotyping Centre (NPEC):** https://www.npec.nl/
 2. **Utrecht University:** https://www.uu.nl/en
 3. **Photon Systems Instruments (PSI):** https://psi.cz/
+4. **CropXR:** https://cropxr.org/
 
 The GitHub Pages-ready landing page is [`docs/index.html`](docs/index.html).

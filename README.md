@@ -3,13 +3,13 @@
 A lightweight companion hub for the HADES project, connecting the **method paper**, experiment-level datasets, analysis code, supplementary workflow video, the companion **Data Descriptor**, and reusable data-publication resources.
 
 > [!NOTE]
-> **Resource status — 3 September 2026.** The HADES method paper has been submitted. Exp32, Exp35 and Exp68 have public Zenodo records. Exp62 has been submitted to the e!DAL Plant Genomics and Phenomics Research Data Repository (PGP) and is awaiting repository review; its dataset-specific access link and DOI are therefore not yet available. Exp44 remains a separate public-record preparation. The companion Data Descriptor is in final preparation for submission.
+> **Resource status — 4 September 2026.** The HADES method paper has been submitted. Exp32, Exp35 and Exp68 have public Zenodo records. Exp62 has been submitted to the e!DAL Plant Genomics and Phenomics Research Data Repository (PGP) and is awaiting repository review; its dataset-specific access link and DOI are therefore not yet available. Exp44 has a reserved Zenodo DOI but is not yet published; its corrected Sanger-sequence archive is still to be added. The companion Data Descriptor is in final preparation for submission.
 
 ## Project
 
 HADES (High-throughput Automated Device for End-to-end Screening) is a fully automated platform for sterile *in vitro* root phenotyping and plant–microbe interaction studies at the Netherlands Plant Eco-phenotyping Centre (NPEC), Utrecht University. It integrates automated media preparation, imaging-based seed selection and robotic sowing, refrigerated stratification, climate-controlled cultivation, programmable microbial inoculation and multimodal imaging within one robotic workflow.
 
-The system can process up to 2,160 custom square Petri dishes in parallel and combines transmitted-light RootCam imaging, multi-channel fluorescence and visible-to-near-infrared hyperspectral imaging with automated analysis. The resulting longitudinal datasets support quantitative study of root architecture, reporter activity, microbial colonization and metabolite-associated fluorescence under standardized conditions.
+The system can process up to 2,160 custom-designed 129 × 129 mm square Petri dishes (referred to as **plates** throughout this resource center) in parallel and combines transmitted-light RootCam imaging, multi-channel fluorescence and visible-to-near-infrared hyperspectral imaging with automated analysis. The resulting longitudinal datasets support quantitative study of root architecture, reporter activity, microbial colonization and metabolite-associated fluorescence under standardized conditions.
 
 ## Method paper
 
@@ -35,7 +35,7 @@ The companion Data Descriptor focuses on the three Arabidopsis reference records
 **Release scope:** Full Exp32 experiment; Arabidopsis Data Descriptor reference record  
 **Product form:** Archive-optimized  
 **Deposited `data/` payload:** 38.752 GB  
-**Reviewed scope:** 20 trays; 100 plant-position rows
+**Reviewed scope:** 20 plates; 100 plant-position rows
 
 - **Biological material:** *Arabidopsis thaliana* Col-0 and the coumarin-biosynthesis mutants f6'h1, cyp82c4 and s8h.
 - **Experimental design:** Longitudinal *in vitro* phenotyping under iron deficiency. Plants are grown on iron-deficient Hoagland medium with Fe-EDTA omitted, solidified with 0.8% Gelrite at pH 7.3.
@@ -55,7 +55,9 @@ Direct source tables used for the Exp32 method-paper figures are stored under [`
 > **Method-paper relationship:** Supplementary Figure S3, fluorescence-based quantification of bacterial colonization dynamics on potato roots; Supplementary Video S4.
 
 **Dataset:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22282859.svg)](https://doi.org/10.5281/zenodo.22282859)  
-**Release scope:** Separate potato public record; outside the three-record Data Descriptor scope
+**Release scope:** Separate potato public record; outside the three-record Data Descriptor scope  
+**Deposited `data/` payload:** 23.6 GB  
+**Reviewed scope:** 42 plates; 42 valid plant-position rows (one plant per plate)
 
 - **Biological material:** *Solanum tuberosum* true-potato-seed genotypes HYB007 and RP043.
 - **Experimental design:** Longitudinal plant-microbe colonization assay with mock, *Pseudomonas simiae* WCS417-mCherry or *Pseudomonas capeferrum* WCS358-mCherry treatments. Bacteria are applied as a 10-µL droplet at OD600 = 0.1 to the root-shoot junction; plants are grown on 1/2 MS without sucrose and with 0.8% Gelrite.
@@ -74,8 +76,11 @@ Direct source tables used for the Exp35 method-paper figure are stored under [`/
 > [!IMPORTANT]
 > **Method-paper relationship:** Figure 4, high-throughput screening of GFP-labelled WCS417 transposon mutants for altered root-colonization and root-development phenotypes; Supplementary Table S4 provides annotations for sequenced candidate mutants.
 
-**Dataset:** **DOI / repository URL to add**  
-**Release scope:** Separate WCS417 transposon-screen public record; outside the three-record Data Descriptor scope
+**Reserved dataset DOI:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22309338.svg)](https://doi.org/10.5281/zenodo.22309338)  
+**Publication status:** DOI reserved; Zenodo record not yet published  
+**Release scope:** Separate WCS417 transposon-screen public record; outside the three-record Data Descriptor scope  
+**Deposited `data/` payload:** 28.3 GB  
+**Reviewed scope:** 100 plates; 500 plants
 
 - **Biological material:** *Arabidopsis thaliana* Col-0 seedlings challenged with individual GFP-labelled *Pseudomonas simiae* WCS417 mariner transposon mutants.
 - **Experimental design:** High-throughput longitudinal screen of a non-saturating collection of 480 random mutants, with mock controls. Individual mutants are applied robotically; the submitted method paper reports a 10-µL bacterial droplet at OD600 = 0.1 to the root-shoot junction and daily imaging over seven days.
@@ -92,7 +97,7 @@ The direct source table used for the Exp44 method-paper screening figure is stor
 
 **GFP-labelled** ***Pseudomonas simiae*** **WCS417 mariner transposon mutants**
 
-[`EC00167691.zip`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/EC00167691.zip)
+**Sequence archive:** **to be added**
 
 Raw Sanger sequencing data for the 96 GFP-labelled *P. simiae* WCS417 mariner transposon mutants. Individual sequence files are labelled according to the position of each mutant in the 96-well screening plate. The corresponding transposon-disrupted genes and mutant annotations are provided in Supplementary Table S4.
 
@@ -109,7 +114,7 @@ Raw Sanger sequencing data for the 96 GFP-labelled *P. simiae* WCS417 mariner tr
 **Release scope:** Full eight-genotype Exp62 batch; Arabidopsis Data Descriptor reference record  
 **Product form:** Repository-browsable  
 **Submitted data payload:** 637.435 GB  
-**Reviewed scope:** 149 trays; 745 plant-position rows
+**Reviewed scope:** 149 plates; 745 plant-position rows
 
 - **Biological material:** *Arabidopsis thaliana* Col-0, f6'h1, cyp82c4, s8h, bglu42, arf1, arf19 and tir1-1 afb2-3 afb3-4 under iron-deficient conditions.
 - **Experimental design:** Exp62 is a broader follow-up to Exp32 that adds Boxeed seed phenotyping and VNIR hyperspectral fluorescence measurements. The companion method paper uses the Col-0, f6'h1, cyp82c4 and s8h subset for its hyperspectral demonstration; the public record preserves the complete eight-genotype experiment.
@@ -132,7 +137,7 @@ Direct source tables used for the Exp62 method-paper hyperspectral figure are st
 **Release scope:** Complete 12-condition Exp68 batch; Arabidopsis Data Descriptor reference record  
 **Product form:** Archive-optimized  
 **Deposited `data/` payload:** 78.604 GB  
-**Reviewed scope:** 30 trays; 150 plant-position rows
+**Reviewed scope:** 30 plates; 150 plant-position rows
 
 - **Biological material:** *Arabidopsis thaliana* Col-0 and DR5v2::mTurquoise2 reporter seedlings.
 - **Experimental design:** The complete experiment combines two plant genotype/reporter states with mock, WCS417-mCherry and WCS417_pvd-mCherry bacterial conditions in media with or without 5% sucrose. The narrower subset analysed in the method paper is identified above.

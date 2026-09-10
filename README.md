@@ -3,7 +3,7 @@
 A lightweight companion hub for the HADES project, connecting the **method paper**, experiment-level datasets, analysis code, supplementary workflow video, the companion **Data Descriptor**, and reusable data-publication resources.
 
 > [!NOTE]
-> **Resource status — 4 September 2026.** The HADES method paper has been submitted. Exp32, Exp35 and Exp68 have public Zenodo records. Exp62 has been submitted to the e!DAL Plant Genomics and Phenomics Research Data Repository (PGP) and is awaiting repository review; its dataset-specific access link and DOI are therefore not yet available. Exp44 has a reserved Zenodo DOI but is not yet published; its corrected Sanger-sequence archive is still to be added. The companion Data Descriptor is in final preparation for submission.
+> **Resource status — 10 September 2026.** The HADES method paper has been submitted. Exp32, Exp35, Exp44 and Exp68 have public Zenodo records. Exp62 has been submitted to the e!DAL Plant Genomics and Phenomics Research Data Repository (PGP) and is awaiting repository review; its dataset-specific access link and DOI are therefore not yet available. The companion Data Descriptor is in final preparation for submission.
 
 ## Project
 
@@ -76,8 +76,7 @@ Direct source tables used for the Exp35 method-paper figure are stored under [`/
 > [!IMPORTANT]
 > **Method-paper relationship:** Figure 4, high-throughput screening of GFP-labelled WCS417 transposon mutants for altered root-colonization and root-development phenotypes; Supplementary Table S4 provides annotations for sequenced candidate mutants.
 
-**Reserved dataset DOI:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22309338.svg)](https://doi.org/10.5281/zenodo.22309338)  
-**Publication status:** DOI reserved; Zenodo record not yet published  
+**Dataset:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22309338.svg)](https://doi.org/10.5281/zenodo.22309338)  
 **Release scope:** Separate WCS417 transposon-screen public record; outside the three-record Data Descriptor scope  
 **Deposited `data/` payload:** 28.3 GB  
 **Reviewed scope:** 100 plates; 500 plants
@@ -97,7 +96,7 @@ The direct source table used for the Exp44 method-paper screening figure is stor
 
 **GFP-labelled** ***Pseudomonas simiae*** **WCS417 mariner transposon mutants**
 
-**Sequence archive:** **to be added**
+[`EC00167691.zip`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/EC00167691.zip)
 
 Raw Sanger sequencing data for the 96 GFP-labelled *P. simiae* WCS417 mariner transposon mutants. Individual sequence files are labelled according to the position of each mutant in the 96-well screening plate. The corresponding transposon-disrupted genes and mutant annotations are provided in Supplementary Table S4.
 

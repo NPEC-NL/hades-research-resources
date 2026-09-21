@@ -1,25 +1,23 @@
 # HADES software reproducibility demo
 
-This document describes a small, real-data demonstration of the custom analysis software used in the HADES method paper:
+This directory contains a small, real-data demonstration of the custom analysis software used in the HADES Nature Methods manuscript:
 
 **HADES: high-throughput end-to-end automation of multimodal phenotyping for root-microbe interactions**
-
-> **Repository location:** This guide is stored at the repository root as `SOFTWARE_DEMO.md`. The binary demo inputs are not tracked in Git; they are distributed as the `demo.zip` asset attached to release `v1.0`.
 
 The demo uses one real Exp62 acquisition set:
 
 - **Experiment:** Exp62
 - **Genotype:** *Arabidopsis thaliana* Col-0
-- **Plate:** 2
+- **Plate/tray:** 2
 - **ROOT1 / FC1 acquisition round:** 20
 - **VNIR2 acquisition round:** 19
-- **Plants:** 5 plants on one plate
+- **Plants:** 5 plants on one tray
 - **Fluorescence channel used here:** FC1 / F483
 - **Hyperspectral sensor used in the manuscript:** VNIR2
 
 The ROOT/FC and VNIR2 records correspond to the same experimental day. Acquisition-round numbers differ because the sensor schedules are independent.
 
-The `demo.zip` release asset is a minimal subset prepared from the Exp62 experiment record specifically for software verification. Scientific reuse should cite the full Exp62 dataset rather than the demo archive.
+The files in `demo.zip` are a minimal subset prepared from the Exp62 experiment record specifically for software verification. Scientific reuse should cite the full Exp62 dataset rather than the demo archive.
 
 The purpose of this demo is to verify that the custom scientific analysis software can be installed and run on a small representative dataset. It is **not** a copy of the complete HADES experiment record and is **not** intended to reproduce every manuscript figure in one command.
 
@@ -126,7 +124,7 @@ HADES_FC reads HADES fluorescence acquisitions, aligns fluorescence images to Ro
 
 https://github.com/valerian-meline/HADES_HSI
 
-HADES_HSI processes the hyperspectral data used in the method paper.
+HADES_HSI processes the hyperspectral data used in the Nature Methods manuscript.
 
 The manuscript uses **VNIR** as the generic name of the visible-to-near-infrared hyperspectral modality. In the PlantScreen export and in the analysis code, the actual sensor/export identifier used for the manuscript hyperspectral results is **`VNIR2`**. The other VNIR sensor is not required to reproduce the manuscript analyses.
 
@@ -143,7 +141,8 @@ demo/
 │
 ├── ROOT1/
 │   ├── 122_20_2025-07-17_09-04-48_exp62_col_02_ROOT1_FishEyeCorrected.tif
-│   └── vendor_png.png        # optional validation reference
+│   └── reference/
+│       └── vendor_png.png    # validation reference; not an analysis input
 │
 └── VNIR2/
     └── Measurement/
@@ -171,6 +170,8 @@ demo/
 `SENSOR/Measurement/` is part of the original PlantScreen vendor export layout. HADES_HSI preserves this layout and writes corresponding results under `VNIR2/Analysis/`.
 
 PyPhenotyper and HADES_FC do not require their inputs to be under a `Measurement/` directory.
+
+`ROOT1/reference/vendor_png.png` is kept in a subdirectory deliberately. PyPhenotyper scans `.png` files directly under the supplied ROOT input directory, so placing the historical reference PNG in `ROOT1/` itself would risk it being interpreted as an additional analysis input. The `reference/` directory must therefore remain separate from the generated analysis PNG.
 
 The filename contains `FishEyeCorrected` because this field is part of the historical vendor naming convention. In HADES RootCam acquisitions used here, the fish-eye-correction setting is fixed to **FEC = 0**, i.e. no fish-eye correction is applied.
 
@@ -284,12 +285,16 @@ python -c "import numpy, pandas, scipy, skimage, sklearn, cv2, imageio, spectral
 
 ## 10. ROOT1 TIFF and historical PNG representation
 
-The distributed ROOT1 demo input consists of one original acquisition file:
+The distributed ROOT1 demo input contains one original acquisition file and one historical vendor PNG retained only for validation:
 
 ```text
 ROOT1/
-└── 122_20_2025-07-17_09-04-48_exp62_col_02_ROOT1_FishEyeCorrected.tif
+├── 122_20_2025-07-17_09-04-48_exp62_col_02_ROOT1_FishEyeCorrected.tif
+└── reference/
+    └── vendor_png.png
 ```
+
+Only the TIFF is an analysis source file. `reference/vendor_png.png` is never supplied to PyPhenotyper.
 
 The `FishEyeCorrected` token is part of the historical vendor filename. For the HADES acquisition used here, **FEC = 0**, meaning that no fish-eye correction was applied.
 
@@ -340,23 +345,19 @@ if not cv2.imwrite(dst, rgba):
 print(dst)
 ```
 
-This creates:
+This creates the analysis PNG directly under `ROOT1/` while leaving the reference PNG isolated in its subdirectory:
 
 ```text
 ROOT1/
 ├── 122_20_2025-07-17_09-04-48_exp62_col_02_ROOT1_FishEyeCorrected.tif
-└── 122_20_2025-07-17_09-04-48_exp62_col_02_ROOT1_FishEyeCorrected.png
+├── 122_20_2025-07-17_09-04-48_exp62_col_02_ROOT1_FishEyeCorrected.png
+└── reference/
+    └── vendor_png.png
 ```
 
-The generated PNG is the PyPhenotyper input.
+The generated PNG directly under `ROOT1/` is the PyPhenotyper input.
 
-Optionally, the demo may also contain:
-
-```text
-ROOT1/vendor_png.png
-```
-
-This is a historical vendor-generated PNG retained **only as a validation reference**. It is not required to run the analysis. The newly reconstructed PNG can be compared with `vendor_png.png` to confirm the historical TIFF-to-PNG mapping.
+`ROOT1/reference/vendor_png.png` is a historical vendor-generated PNG retained **only as a validation reference**. It must remain in the `reference/` subdirectory so that PyPhenotyper does not interpret it as a second input image. The newly reconstructed PNG can be compared with this reference to confirm the historical TIFF-to-PNG mapping.
 
 For example:
 
@@ -369,7 +370,7 @@ a = cv2.imread(
     cv2.IMREAD_UNCHANGED,
 )
 b = cv2.imread(
-    r"D:\path\to\demo\ROOT1\vendor_png.png",
+    r"D:\path\to\demo\ROOT1\reference\vendor_png.png",
     cv2.IMREAD_UNCHANGED,
 )
 
@@ -377,6 +378,8 @@ print("identical:", np.array_equal(a, b))
 ```
 
 For the validated conversion, the reconstructed and historical vendor PNG representations should be identical.
+
+Do **not** copy or move `reference/vendor_png.png` into the top level of `ROOT1/` before running PyPhenotyper. No deletion step is required: keeping the reference file in its subdirectory prevents it from being read as an analysis image.
 
 A separate lossless 16-bit representation can be constructed by left-shifting the 12 meaningful bits:
 
@@ -417,7 +420,7 @@ Before running PyPhenotyper, generate the vendor-equivalent PNG in the `ROOT1/` 
 When prompted, provide the `ROOT1/` directory:
 
 ```text
-D:\path\to\demo\ROOT1
+D:\path\to\hades-research-resources\source\demo\ROOT1
 ```
 
 For the demo, use:
@@ -426,7 +429,7 @@ For the demo, use:
 batch size: 1
 ```
 
-PyPhenotyper scans lowercase `.png` files directly in the supplied input directory.
+PyPhenotyper scans lowercase `.png` files directly in the supplied input directory. For this demo, the only such top-level PNG should be the newly generated `122_20_2025-07-17_09-04-48_exp62_col_02_ROOT1_FishEyeCorrected.png`; the validation image remains under `ROOT1/reference/`.
 
 ### Expected ROOT output
 
@@ -466,7 +469,7 @@ On the test workstation:
 ```text
 CPU: Intel Xeon Gold 5317
 GPU used: no
-Input: one plate, one day, five plants
+Input: one tray, one day, five plants
 Runtime: approximately 19 s
 ```
 
@@ -562,7 +565,7 @@ The first QC check should be the generated overlay image. The RootCam-derived ma
 
 ```text
 CPU: Intel Xeon Gold 5317
-Input: one plate, one day, five plants
+Input: one tray, one day, five plants
 Runtime: approximately 20 s
 ```
 
@@ -577,7 +580,7 @@ conda activate fc-improvement
 cd path\to\HADES_HSI
 ```
 
-The hyperspectral records used by the method paper are stored under the PlantScreen sensor/export identifier:
+The hyperspectral records used by the Nature Methods manuscript are stored under the PlantScreen sensor/export identifier:
 
 ```text
 VNIR2
@@ -630,7 +633,7 @@ The first QC check should be `*_OverlayQualityCheck.png`. Registered RootCam mas
 
 ```text
 CPU: Intel Xeon Gold 5317
-Input: one plate, one day, five plants
+Input: one tray, one day, five plants
 Runtime: approximately 120 s
 ```
 
@@ -745,7 +748,7 @@ For complete experiments:
 4. use the experiment metadata and file/provenance mappings rather than guessing sensor or treatment associations;
 5. regenerate historical RootCam PNG analysis inputs from archived TIFF files where needed;
 6. run the relevant custom analysis pipeline;
-7. retain experiment, plate, plant position, sensor, round, acquisition time, software version, and source path in downstream provenance.
+7. retain experiment, plate/tray, plant position, sensor, round, acquisition time, software version, and source path in downstream provenance.
 
 Different experiments use different sensor combinations. Do not assume that the `ROOT1 + FC1/F483 + VNIR2` configuration used in this demo applies to every HADES experiment.
 
@@ -793,21 +796,7 @@ The frozen PyPhenotyper HADES release is archived at:
 
 https://doi.org/10.5281/zenodo.22283634
 
-The frozen HADES_FC submission release is available at:
-
-https://github.com/valerian-meline/HADES_FC/releases/tag/hades-method-submission-2026-08-26
-
-and archived at:
-
-https://doi.org/10.5281/zenodo.22876405
-
-The frozen HADES_HSI submission release is available at:
-
-https://github.com/valerian-meline/HADES_HSI/releases/tag/hades-method-submission-2026-08-26
-
-and archived at:
-
-https://doi.org/10.5281/zenodo.22876357
+For HADES_FC and HADES_HSI, cite the version/release linked from the HADES research-resources page at the time of publication.
 
 ## 24. Data
 
@@ -833,4 +822,4 @@ For the fastest verification of the custom analysis software:
 8. run HADES_FC and inspect its overlay;
 9. run HADES_HSI on `demo/VNIR2/Measurement/` and inspect the VNIR2 QC overlay.
 
-If `vendor_png.png` is included in the archive, it is only a validation reference for confirming the TIFF-to-PNG conversion and is not an additional analysis input.
+`ROOT1/reference/vendor_png.png` is included only as a validation reference for the TIFF-to-PNG conversion. Keep it in the `reference/` subdirectory; it is not an analysis input and should not be moved into the top level of `ROOT1/`.

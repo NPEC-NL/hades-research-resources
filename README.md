@@ -1,9 +1,9 @@
 # HADES research resources
 
-A lightweight companion hub for the HADES project, connecting the **method paper**, experiment-level datasets, analysis code, supplementary workflow video, the companion **Data Descriptor**, and reusable data-publication resources.
+A lightweight companion hub for the HADES project, connecting the **method paper**, experiment-level datasets, analysis code, a reviewer-oriented software reproducibility demo, supplementary workflow video, the companion **Data Descriptor**, and reusable data-publication resources.
 
 > [!NOTE]
-> **Resource status — 10 September 2026.** The HADES method paper has been submitted. Exp32, Exp35, Exp44 and Exp68 have public Zenodo records. Exp62 has been submitted to the e!DAL Plant Genomics and Phenomics Research Data Repository (PGP) and is awaiting repository review; its dataset-specific access link and DOI are therefore not yet available. The companion Data Descriptor is in final preparation for submission.
+> **Resource status -- 21 September 2026.** The HADES method paper has been submitted. Exp32, Exp35, Exp44 and Exp68 have public Zenodo records. Exp62 has been submitted to the e!DAL Plant Genomics and Phenomics Research Data Repository (PGP) and is awaiting repository review; while review is pending, an anonymous SURFdrive preview/download link provides an exact copy of the content submitted to PGP. The companion Data Descriptor has been submitted to bioRxiv and is awaiting a DOI.
 
 ## Project
 
@@ -26,7 +26,7 @@ The experiment records and the method-paper figure sources serve different purpo
 
 The companion Data Descriptor focuses on the three Arabidopsis reference records **Exp32, Exp62 and Exp68**. Exp35 and Exp44 remain separate supporting HADES records because they represent a potato study and a large bacterial-mutant screen, respectively.
 
-### Exp32 — Arabidopsis coumarin-genotype root architecture and fluorescence dynamics
+### HADES Exp32 dataset: Arabidopsis root architecture and coumarin-associated fluorescence dynamics across coumarin biosynthesis genotypes under iron deficiency
 
 > [!IMPORTANT]
 > **Method-paper relationship:** Figure 2, longitudinal root-system architecture; Figure 5, coumarin-associated fluorescence; Supplementary Videos S2 and S5.
@@ -37,10 +37,12 @@ The companion Data Descriptor focuses on the three Arabidopsis reference records
 **Deposited `data/` payload:** 38.752 GB  
 **Reviewed scope:** 20 plates; 100 plant-position rows
 
-- **Biological material:** *Arabidopsis thaliana* Col-0 and the coumarin-biosynthesis mutants f6'h1, cyp82c4 and s8h.
-- **Experimental design:** Longitudinal *in vitro* phenotyping under iron deficiency. Plants are grown on iron-deficient Hoagland medium with Fe-EDTA omitted, solidified with 0.8% Gelrite at pH 7.3.
-- **Deposited content:** Daily transmitted-light RootCam acquisitions, repeated fluorescence acquisitions, PlantScreen Data Analyzer analysis products, reviewed metadata, package-scoped HADES registry definitions, manifests and provenance records.
-- **Method-paper analysis:** The custom ROOT and fluorescence pipelines generate the segmentation masks and organ-/ROI-specific measurements used for longitudinal root architecture and coumarin-associated fluorescence figures; these large downstream result trees are not duplicated in the experiment deposit.
+**Public-record description:** Longitudinal *Arabidopsis thaliana* imaging dataset examining root development and coumarin-associated fluorescence across wild-type Col-0 and the f6′h1, cyp82c4 and s8h coumarin-biosynthesis mutants under iron-deficient conditions. The public record preserves RootCam transmitted-light and fluorescence acquisition records, corresponding PlantScreen Data Analyzer outputs where generated, reviewed metadata, package-scoped variable definitions, manifests, checksums, provenance and validation information.
+
+- **Biological material:** *Arabidopsis thaliana* Col-0 and the coumarin-biosynthesis mutants f6′h1, cyp82c4 and s8h.
+- **Experimental design:** Longitudinal *in vitro* phenotyping on Fe-deficient Hoagland medium lacking Fe(III)-EDTA and solidified with 0.8% Gelrite.
+- **Acquisition:** Repeated transmitted-light RootCam imaging records plant and root development, while fluorescence acquisitions capture endogenous fluorescence associated with fluorescent coumarin metabolites.
+- **Reuse note:** The RootCam fluorescence signal should be interpreted as coumarin-associated fluorescence rather than a direct quantitative measurement of the complete coumarin pool. Large custom segmentation, fluorescence-alignment and figure-generation trees are not part of the dataset record and can be regenerated with the archived analysis code.
 
 #### Method paper figure source
 
@@ -49,48 +51,53 @@ Direct source tables used for the Exp32 method-paper figures are stored under [`
 - [`masterfile-exp32-cumarins_FC1.xlsx`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/masterfile-exp32-cumarins_FC1.xlsx) — longitudinal Exp32 master table containing the morphology/fluorescence measurements used for the root-architecture and coumarin-associated fluorescence figure outputs.
 - [`exp32_auc_results.csv`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/exp32_auc_results.csv) — area-under-the-curve statistical results used for longitudinal Exp32 comparisons.
 
-### Exp35 — Potato root-colonization dynamics under WCS417-mCherry and WCS358-mCherry inoculation
+### HADES Exp35 dataset: Potato root colonisation dynamics by *Pseudomonas simiae* WCS417 and *Pseudomonas capeferrum* WCS358 across host genotypes
 
 > [!IMPORTANT]
-> **Method-paper relationship:** Supplementary Figure S3, fluorescence-based quantification of bacterial colonization dynamics on potato roots; Supplementary Video S4.
+> **Method-paper relationship:** Supplementary Figure S3, fluorescence-based quantification of bacterial colonisation dynamics on potato roots; Supplementary Video S4.
 
 **Dataset:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22282859.svg)](https://doi.org/10.5281/zenodo.22282859)  
 **Release scope:** Separate potato public record; outside the three-record Data Descriptor scope  
 **Deposited `data/` payload:** 23.6 GB  
 **Reviewed scope:** 42 plates; 42 valid plant-position rows (one plant per plate)
 
+**Public-record description:** Longitudinal potato root-imaging dataset examining bacterial root-colonisation dynamics across host and microbial genotypes. The experiment contains diploid hybrid true potato seed genotypes HYB007 and RP043 under mock treatment or inoculation with mCherry-labelled *Pseudomonas simiae* WCS417 or *Pseudomonas capeferrum* WCS358.
+
 - **Biological material:** *Solanum tuberosum* true-potato-seed genotypes HYB007 and RP043.
-- **Experimental design:** Longitudinal plant-microbe colonization assay with mock, *Pseudomonas simiae* WCS417-mCherry or *Pseudomonas capeferrum* WCS358-mCherry treatments. Bacteria are applied as a 10-µL droplet at OD600 = 0.1 to the root-shoot junction; plants are grown on 1/2 MS without sucrose and with 0.8% Gelrite.
+- **Experimental design:** Longitudinal plant–microbe colonisation assay with mock, WCS417-mCherry or WCS358-mCherry treatments. Bacteria are applied as a 10-µL droplet at OD600 = 0.1 to the root-shoot junction; plants are grown on 1/2 MS without sucrose and with 0.8% Gelrite.
 - **Acquisition:** RootCam morphology and mCherry fluorescence are acquired repeatedly to follow root development and bacterial signal along the root system.
-- **Method-paper analysis:** The main figure-level quantitative readout is mCherry fluorescence along the primary-root ROI, enabling comparison of host-genotype- and bacterial-strain-dependent colonization dynamics.
+- **Reuse note:** The record supports longitudinal potato-root analysis, fluorescence-based bacterial-colonisation analysis, host-genotype × bacterial-strain comparisons, and development or benchmarking of root- and fluorescence-image analysis workflows. Large downstream segmentation, alignment and figure-generation result trees are not included.
 
 #### Method paper figure source
 
 Direct source tables used for the Exp35 method-paper figure are stored under [`/source`](https://github.com/NPEC-NL/hades-research-resources/tree/main/source):
 
-- [`masterfile_Exp35_FC2_V2.xlsx`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/masterfile_Exp35_FC2_V2.xlsx) — longitudinal potato root-colonization master table used for the fluorescence-based colonization figure.
+- [`masterfile_Exp35_FC2_V2.xlsx`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/masterfile_Exp35_FC2_V2.xlsx) — longitudinal potato root-colonisation master table used for the fluorescence-based colonisation figure.
 - [`Exp35_auc_tukey.csv`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/Exp35_auc_tukey.csv) — area-under-the-curve and Tukey multiple-comparison results used for the Exp35 statistical comparisons.
 
-### Exp44 — Arabidopsis Col-0 screen of GFP-labelled WCS417 transposon mutants
+### HADES Exp44 dataset: High-throughput longitudinal Arabidopsis screen of 480 GFP-labelled *Pseudomonas simiae* WCS417 transposon-library isolates
 
 > [!IMPORTANT]
-> **Method-paper relationship:** Figure 4, high-throughput screening of GFP-labelled WCS417 transposon mutants for altered root-colonization and root-development phenotypes; Supplementary Table S4 provides annotations for sequenced candidate mutants.
+> **Method-paper relationship:** Figure 4, high-throughput longitudinal screening of GFP-labelled WCS417 transposon-library isolates for altered bacterial colonisation and root-development-associated phenotypes; Supplementary Table S4 provides annotations for sequenced candidate isolates.
 
 **Dataset:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22309338.svg)](https://doi.org/10.5281/zenodo.22309338)  
 **Release scope:** Separate WCS417 transposon-screen public record; outside the three-record Data Descriptor scope  
 **Deposited `data/` payload:** 28.3 GB  
-**Reviewed scope:** 100 plates; 500 plants
+**Reviewed scope:** 100 plates; 500 plant positions (480 bacterial-isolate treatments and 20 mock controls; five seedlings per plate)
 
-- **Biological material:** *Arabidopsis thaliana* Col-0 seedlings challenged with individual GFP-labelled *Pseudomonas simiae* WCS417 mariner transposon mutants.
-- **Experimental design:** High-throughput longitudinal screen of a non-saturating collection of 480 random mutants, with mock controls. Individual mutants are applied robotically; the submitted method paper reports a 10-µL bacterial droplet at OD600 = 0.1 to the root-shoot junction and daily imaging over seven days.
-- **Acquisition:** Repeated root morphology and bacterial fluorescence imaging are processed through the HADES segmentation and analysis workflow.
-- **Method-paper analysis:** Fifteen morphological and fluorescence parameters capture root architecture, shoot growth and bacterial colonization. The proof-of-concept analysis emphasizes primary-root size and mean fluorescence of the primary root to identify candidate outliers.
+**Public-record description:** HADES Exp44 is a high-throughput longitudinal *Arabidopsis thaliana* imaging dataset generated using the HADES automated phenotyping platform to screen a GFP-labelled *Pseudomonas simiae* WCS417 transposon library for plant-associated phenotypes. Bacterial treatments are assigned at the individual plant-position level, so multiple library isolates can occur within the same physical plate.
+
+Seven-day-old seedlings were inoculated at the root-shoot junction with GFP-labelled WCS417 library isolates using the HADES robotic liquid-handling system. The companion method paper describes application of 10-µL bacterial suspensions at OD600 = 0.1 and daily imaging over seven consecutive days after inoculation. Longitudinal RootCam acquisition provides transmitted-light records of plant and root development together with fluorescence imaging of the GFP-labelled bacterial treatments.
+
+The public release preserves the source HADES acquisition records and curated experimental metadata, including mappings between physical plates, individual plant positions, bacterial treatments and available mutant identifiers. Custom HADES segmentation, fluorescence alignment, derived phenotype tables and figure-generation outputs are downstream products and are not included in the dataset itself.
+
+A subset of 96 screened bacterial isolates was selected for transposon insertion-site sequencing. Available metadata link sequenced isolates to screening-well identifiers where the relationship could be recovered. Usable locus assignments were obtained for approximately half of this subset; absence of a locus assignment should not be interpreted as missing phenotyping data or automatically as confirmation of a wild-type genotype.
 
 #### Method paper figure source
 
 The direct source table used for the Exp44 method-paper screening figure is stored under [`/source`](https://github.com/NPEC-NL/hades-research-resources/tree/main/source):
 
-- [`masterfile_exp44_FC1_filled_7DAI_corrected_with_P3map_checked_7only.xlsx`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/masterfile_exp44_FC1_filled_7DAI_corrected_with_P3map_checked_7only.xlsx) — curated seven-day screening master table used to generate the WCS417 transposon-mutant phenotyping figure, including root-growth and fluorescence readouts.
+- [`masterfile_exp44_FC1_filled_7DAI_corrected_with_P3map_checked_7only.xlsx`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/masterfile_exp44_FC1_filled_7DAI_corrected_with_P3map_checked_7only.xlsx) — curated seven-day screening master table used to generate the WCS417 transposon-library phenotyping figure, including root-growth and fluorescence readouts.
 
 #### Sequence data
 
@@ -100,25 +107,26 @@ The direct source table used for the Exp44 method-paper screening figure is stor
 
 Raw Sanger sequencing data for the 96 GFP-labelled *P. simiae* WCS417 mariner transposon mutants. Individual sequence files are labelled according to the position of each mutant in the 96-well screening plate. The corresponding transposon-disrupted genes and mutant annotations are provided in Supplementary Table S4.
 
-### Exp62 — Multimodal Arabidopsis phenotyping with Boxeed seed imaging and VNIR hyperspectral fluorescence
+### HADES Exp62 dataset: Multimodal Arabidopsis phenotyping with Boxeed seed imaging and VNIR hyperspectral fluorescence across eight genotypes under iron deficiency
 
 > [!IMPORTANT]
-> **Method-paper relationship:** Figure 6, VNIR hyperspectral discrimination of coumarin-associated emission profiles in the Col-0, f6'h1, cyp82c4 and s8h subset; Supplementary Figure S2, Boxeed seed-imaging and selection component.
+> **Method-paper relationship:** Figure 6, VNIR hyperspectral discrimination of coumarin-associated emission profiles in the Col-0, f6′h1, cyp82c4 and s8h subset; Supplementary Figure S2, Boxeed seed-imaging and selection component.
 
-**Dataset title submitted to e!DAL-PGP:** *HADES Exp62 dataset: Multimodal Arabidopsis phenotyping with Boxeed seed imaging and VNIR hyperspectral fluorescence across eight genotypes under iron deficiency*  
-**Repository:** [e!DAL - Plant Genomics and Phenomics Research Data Repository (PGP)](https://edal-pgp.ipk-gatersleben.de/)  
+**Repository target:** [e!DAL - Plant Genomics and Phenomics Research Data Repository (PGP)](https://edal-pgp.ipk-gatersleben.de/)  
 **Status:** Submitted 3 September 2026; repository review in progress  
-**Dataset-specific link / DOI:** **pending repository review**  
+**Temporary anonymous preview / download:** [SURFdrive](https://surfdrive.surf.nl/s/SwYwTTFe84ZoATQ) — exact copy of the content submitted to e!DAL-PGP  
+**Dataset-specific e!DAL link / DOI:** **pending repository review**  
 **Licence:** CC BY 4.0  
 **Release scope:** Full eight-genotype Exp62 batch; Arabidopsis Data Descriptor reference record  
 **Product form:** Repository-browsable  
 **Submitted data payload:** 637.435 GB  
 **Reviewed scope:** 149 plates; 745 plant-position rows
 
-- **Biological material:** *Arabidopsis thaliana* Col-0, f6'h1, cyp82c4, s8h, bglu42, arf1, arf19 and tir1-1 afb2-3 afb3-4 under iron-deficient conditions.
-- **Experimental design:** Exp62 is a broader follow-up to Exp32 that adds Boxeed seed phenotyping and VNIR hyperspectral fluorescence measurements. The companion method paper uses the Col-0, f6'h1, cyp82c4 and s8h subset for its hyperspectral demonstration; the public record preserves the complete eight-genotype experiment.
+**Dataset description:** Multimodal *Arabidopsis thaliana* phenotyping dataset combining Boxeed seed imaging/selection records with VNIR hyperspectral fluorescence acquisition under iron-deficient conditions across eight genotypes. The method paper uses the Col-0, f6′h1, cyp82c4 and s8h subset for its hyperspectral demonstration, while the public release preserves the complete eight-genotype experiment.
+
+- **Biological material:** *Arabidopsis thaliana* Col-0, f6′h1, cyp82c4, s8h, bglu42, arf1, arf19 and tir1-1 afb2-3 afb3-4 under iron-deficient conditions.
 - **Deposited content:** VNIR BIL/HDR hyperspectral cubes and calibration companions, RootCam/mask context where applicable, PlantScreen Data Analyzer analysis outputs, Boxeed seed images and seed measurement/selection records, reviewed metadata, package-scoped registry definitions, manifests and provenance records.
-- **Repository design:** Exp62 is prepared as a file-browsable data tree rather than the archive-optimized form used for Exp32 and Exp68, matching e!DAL-PGP's repository model for direct browsing of individual files.
+- **Repository design:** Exp62 is prepared as a file-browsable data tree rather than the archive-optimized form used for Exp32 and Exp68. The temporary SURFdrive copy is anonymously accessible and matches the submitted e!DAL-PGP content exactly; it will serve only as the reviewer-facing preview while repository review is pending.
 
 #### Method paper figure source
 
@@ -127,10 +135,10 @@ Direct source tables used for the Exp62 method-paper hyperspectral figure are st
 - [`masterfile_Exp62_VNIR_root_4genotype.csv`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/masterfile_Exp62_VNIR_root_4genotype.csv) — wavelength-resolved VNIR fluorescence measurements extracted from the root region for the four-genotype method-paper subset.
 - [`masterfile_Exp62_VNIR_rhizosphere_4genotype.csv`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/masterfile_Exp62_VNIR_rhizosphere_4genotype.csv) — wavelength-resolved VNIR fluorescence measurements extracted from the dilated peri-root/rhizosphere region for the four-genotype method-paper subset.
 
-### Exp68 — Arabidopsis DR5v2/WCS417 dual-channel fluorescence experiment
+### HADES Exp68 dataset: Arabidopsis auxin-responsive fluorescence and *Pseudomonas simiae* WCS417 colonisation dynamics across bacterial and sucrose conditions
 
 > [!IMPORTANT]
-> **Method-paper relationship:** Figure 3, dual-channel fluorescence imaging of auxin-responsive DR5v2::mTurquoise2 signalling and WCS417-mCherry colonization; Supplementary Video S3. The method-paper demonstration uses the no-added-sucrose, non-pvd WCS417-mCherry subset and corresponding controls.
+> **Method-paper relationship:** Figure 3, dual-channel fluorescence imaging of auxin-responsive DR5v2::mTurquoise2 signalling and WCS417-mCherry colonisation; Supplementary Video S3. The method-paper demonstration uses the no-added-sucrose, non-pvd WCS417-mCherry subset and corresponding controls.
 
 **Dataset:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22181454.svg)](https://doi.org/10.5281/zenodo.22181454)  
 **Release scope:** Complete 12-condition Exp68 batch; Arabidopsis Data Descriptor reference record  
@@ -138,17 +146,19 @@ Direct source tables used for the Exp62 method-paper hyperspectral figure are st
 **Deposited `data/` payload:** 78.604 GB  
 **Reviewed scope:** 30 plates; 150 plant-position rows
 
+**Public-record description:** Longitudinal *Arabidopsis thaliana* imaging dataset examining plant development, auxin-responsive fluorescence and bacterial-associated fluorescence across plant, bacterial and media conditions. The complete batch contains Col-0 and DR5v2::mTurquoise2 plants, mock/WCS417-mCherry/WCS417_pvd-mCherry bacterial conditions, and media with or without 5% sucrose, preserving a broader design than the subset analysed in the method paper.
+
 - **Biological material:** *Arabidopsis thaliana* Col-0 and DR5v2::mTurquoise2 reporter seedlings.
-- **Experimental design:** The complete experiment combines two plant genotype/reporter states with mock, WCS417-mCherry and WCS417_pvd-mCherry bacterial conditions in media with or without 5% sucrose. The narrower subset analysed in the method paper is identified above.
+- **Experimental design:** Complete 12-condition batch combining two plant genotype/reporter states with mock, WCS417-mCherry and WCS417_pvd-mCherry bacterial conditions in media with or without 5% sucrose.
 - **Deposited content:** RootCam morphology records, native fluorescence acquisition containers, PlantScreen Data Analyzer analysis products, reviewed metadata, package-scoped HADES registry definitions, manifests and provenance records.
-- **Method-paper analysis:** Custom fluorescence processing uses RootCam-derived masks and geometric registration to quantify mCherry bacterial signal and mTurquoise2 auxin-responsive reporter activity along defined root regions. These downstream result trees are not duplicated in the experiment deposit.
+- **Method-paper subset:** The dual-channel demonstration uses the non-pvd WCS417-mCherry, no-added-sucrose conditions and corresponding controls to examine auxin-responsive mTurquoise2 fluorescence and bacterial colonisation.
 
 #### Method paper figure source
 
 Direct source tables used for the Exp68 method-paper dual-channel fluorescence figure are stored under [`/source`](https://github.com/NPEC-NL/hades-research-resources/tree/main/source):
 
 - [`masterfile_exp68_FC1_mTurquoise_25DAG.xlsx`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/masterfile_exp68_FC1_mTurquoise_25DAG.xlsx) — longitudinal mTurquoise2 reporter measurements used for the auxin-responsive fluorescence analysis.
-- [`masterfile_exp68_mcheery_FC2.xlsx`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/masterfile_exp68_mcheery_FC2.xlsx) — longitudinal mCherry-channel measurements used for WCS417 bacterial-colonization analysis.
+- [`masterfile_exp68_mcheery_FC2.xlsx`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/masterfile_exp68_mcheery_FC2.xlsx) — longitudinal mCherry-channel measurements used for WCS417 bacterial-colonisation analysis.
 - [`exp68_auc_results_bacteria_FC2.csv`](https://github.com/NPEC-NL/hades-research-resources/blob/main/source/exp68_auc_results_bacteria_FC2.csv) — area-under-the-curve statistical results for the Exp68 bacterial fluorescence comparisons.
 
 ## Analysis code
@@ -165,15 +175,44 @@ Processes monochromatic backlit RootCam images through plate detection/cropping,
 
 ### Fluorescence analysis — HADES_FC
 
-**Repository:** https://github.com/valerian-meline/HADES_FC
+**Repository:** https://github.com/valerian-meline/HADES_FC  
+**Frozen release page:** https://github.com/valerian-meline/HADES_FC/releases/tag/hades-method-submission-2026-08-26  
+**Frozen archive DOI:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22876405.svg)](https://doi.org/10.5281/zenodo.22876405)
 
 Uses masks from corresponding monochromatic RootCam images to quantify fluorescence without re-segmenting fluorescence frames. Geometric registration aligns modalities; region-specific measurements cover the root system, primary and lateral roots, root tip, nodes, shoot and a dilated peri-root/rhizosphere region. Mean intensity, total signal and pixel counts support reporter, microbial-colonization and coumarin-associated fluorescence analyses.
 
 ### VNIR hyperspectral analysis — HADES_HSI
 
-**Repository:** https://github.com/valerian-meline/HADES_HSI
+**Repository:** https://github.com/valerian-meline/HADES_HSI  
+**Frozen release page:** https://github.com/valerian-meline/HADES_HSI/releases/tag/hades-method-submission-2026-08-26  
+**Frozen archive DOI:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22876357.svg)](https://doi.org/10.5281/zenodo.22876357)
 
 Processes VNIR fluorescence cubes using dark-reference correction, spectral smoothing and spatial filtering. RootCam masks are registered in two stages using a 670-nm leaf reference and a 410-nm root-enhanced reference. Registered root and peri-root regions are used to derive wavelength-resolved mean, summed and standard-deviation spectra plus pixel-level spectra and spatial coordinates.
+
+## Software reproducibility demo
+
+A small real-data software-verification workflow is provided for reviewers who want to test the complete custom analysis chain on a representative HADES acquisition without downloading a full experiment record.
+
+**Guide:** [`SOFTWARE_DEMO.md`](https://github.com/NPEC-NL/hades-research-resources/blob/main/SOFTWARE_DEMO.md)  
+**Release:** [`v1.0`](https://github.com/NPEC-NL/hades-research-resources/releases/tag/v1.0)  
+**Demo archive:** [`demo.zip`](https://github.com/NPEC-NL/hades-research-resources/releases/download/v1.0/demo.zip)
+
+The demo uses one Exp62 Col-0 plate containing five plants. ROOT1/FC1 and VNIR2 records come from the same experimental day, with independent acquisition-round numbers for the different sensors. The distributed archive contains **inputs only**; downstream ROOT, fluorescence and hyperspectral analysis directories are regenerated locally.
+
+The reviewer workflow verifies the scientific-analysis path:
+
+```text
+ROOT1 raw TIFF
+    -> historical vendor-equivalent 8-bit RGBA PNG
+    -> PyPhenotyper
+    -> ROOT1 masks and morphology measurements
+    -> HADES_FC (FC1 / F483)
+    -> registered fluorescence measurements and QC overlays
+    -> HADES_HSI (VNIR2)
+    -> registered hyperspectral measurements and QC overlays
+```
+
+This is a software reproducibility demo, not a substitute for the full experiment record and not a one-command recreation of every method-paper figure. The `demo.zip` asset is prepared from Exp62 specifically for verification; scientific reuse should cite the full Exp62 dataset. The detailed guide includes tested environments, installation steps, the deterministic ROOT TIFF-to-PNG conversion, expected outputs, measured runtimes, troubleshooting, and the recommended reviewer workflow.
 
 ## Supplementary video
 
@@ -185,18 +224,21 @@ Demonstration of the fully automated HADES workflow, from preparation of plant g
 
 ## Data Descriptor
 
-**Title:** *A HADES reference release for longitudinal multimodal root phenotyping*  
-**Status:** Final manuscript preparation for submission; reference / DOI to add when available.  
+**Title:** *Longitudinal multimodal Arabidopsis root phenotyping data from an automated platform*  
+**Status:** Submitted to bioRxiv; DOI pending.  
 **Scope:** Exp32, Exp62 and Exp68. Exp35 and Exp44 are linked supporting records but are not part of the three-experiment Data Descriptor release.
 
 ### Abstract
 
-Automated root phenotyping platforms generate large, time-resolved image collections whose reuse depends on experimental context, variable definitions and links between sensor records. This Data Descriptor presents three Arabidopsis experiments from the companion HADES method paper, covering longitudinal RootCam imaging, fluorescence, VNIR hyperspectral records, PlantScreen analysis products and, for Exp62, Boxeed seed records. Each experiment is released with reviewed metadata, a package-scoped snapshot of the versioned HADES variable registry, manifests, checksums and minimal raw-format loaders. The registry acts as a data dictionary for machine- and pipeline-generated measurements, providing stable identifiers, definitions, methods and scales. `psi_export_rebuilder` converts contextual PlantScreen exports into traceable research products and separates HADES-specific export rules from reusable scanning, mapping, metadata and packaging operations that can be adapted to other PlantScreen-derived systems. Large downstream segmentation, alignment and figure-generation trees are excluded because they can be regenerated from frozen analysis code. Together, the datasets, registry and rebuilding workflow establish a reusable release pattern for HADES and related PlantScreen data at NPEC.
+Automated root phenotyping platforms generate large, time-resolved image collections whose reuse depends on experimental context, variable definitions and links between sensor records. This Data Descriptor presents three Arabidopsis experiments generated with HADES (High-throughput Automated Device for End-to-end Screening), covering longitudinal RootCam imaging, fluorescence, VNIR hyperspectral records, vendor-generated analysis products and, for Exp62, Boxeed seed records. HADES acquisition, vendor-side analysis and export are managed through PlantScreen, the vendor software environment used by the platform. Each experiment is released with reviewed metadata, a package-scoped HADES variable-registry snapshot, manifests, checksums and minimal raw-format loaders. The registry provides stable definitions, methods and scales for machine- and pipeline-generated measurements. `psi_export_rebuilder`, an open-source release tool developed for these records, converts readable PlantScreen exports into traceable research products while preserving mappings for controlled facility-side recovery. Large downstream segmentation, alignment and figure-generation trees are excluded because they largely duplicate acquisition images and can be regenerated from archived analysis code. Together, these resources support reuse of longitudinal multimodal root-phenotyping data outside the vendor environment.  
+
+**Keywords:** HADES; plant phenotyping; root imaging; fluorescence imaging; hyperspectral imaging; longitudinal imaging; FAIR data
 
 ### psi_export_rebuilder
 
 **GitHub repository:** https://github.com/NPEC-NL/psi-export-rebuilder  
 **Frozen version used to create the reference datasets:** `0.1.0`  
+**Current convenience release:** [`v0.1.1`](https://github.com/NPEC-NL/psi-export-rebuilder/releases/tag/v0.1.1) - adds an easy one-key run script for decompressing/reconstructing archive-optimized products; it does not change the deposited datasets or the release algorithm.
 **Frozen archive DOI:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22213177.svg)](https://doi.org/10.5281/zenodo.22213177)
 
 `psi_export_rebuilder` uses readable PlantScreen user exports as the research-facing release source. It inventories records, preserves `Measurement`/`Analysis` structure, converts supported tables, creates manifests and hashes, integrates reviewed metadata and package-scoped registry definitions, and retains content mappings to facility-side recovery representations.
@@ -220,8 +262,9 @@ The registry is a versioned data dictionary for variables produced by PlantScree
 
 ## Repository services and credits
 
-- **Zenodo** hosts the current public Exp32, Exp35 and Exp68 records and the frozen `psi_export_rebuilder`, HADES variable-registry and ROOT-pipeline releases. Repository information and recommended citation: https://about.zenodo.org/ ; repository-level DOI [![DOI](https://zenodo.org/badge/DOI/10.25495/7GXK-RD71.svg)](https://doi.org/10.25495/7GXK-RD71).
-- **e!DAL - Plant Genomics and Phenomics Research Data Repository (PGP)** is used for the large, file-browsable Exp62 release: https://edal-pgp.ipk-gatersleben.de/ . The repository framework is described by Arend et al. (2014), *BMC Bioinformatics* 15, 214: https://doi.org/10.1186/1471-2105-15-214 .
+- **Zenodo** hosts the current public Exp32, Exp35, Exp44 and Exp68 records and the frozen `psi_export_rebuilder`, HADES variable-registry and ROOT-pipeline releases. Repository information and recommended citation: https://about.zenodo.org/ ; repository-level DOI [![DOI](https://zenodo.org/badge/DOI/10.25495/7GXK-RD71.svg)](https://doi.org/10.25495/7GXK-RD71).
+- **e!DAL - Plant Genomics and Phenomics Research Data Repository (PGP)** is the target repository for the large, file-browsable Exp62 release: https://edal-pgp.ipk-gatersleben.de/ . The submission is under repository review. The repository framework is described by Arend et al. (2014), *BMC Bioinformatics* 15, 214: https://doi.org/10.1186/1471-2105-15-214 .
+- **SURFdrive** provides the temporary anonymous reviewer preview/download for Exp62 while e!DAL-PGP review is pending: [https://surfdrive.surf.nl/s/SwYwTTFe84ZoATQ](https://surfdrive.surf.nl/s/SwYwTTFe84ZoATQ). The SURFdrive content is an exact copy of the content submitted to e!DAL-PGP.
 
 ## Partners
 

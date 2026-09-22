@@ -468,7 +468,9 @@ root_structure.rsml
 
 The demo should produce outputs for five plants.
 
-The generated masks should be visually plausible and should correspond to the roots and shoots in the input image.
+The generated masks should be visually plausible and should correspond to the roots and shoots in the input image. `demo_image_mask.png` is the expected output:
+
+![Expected output under \demo\ROOT1_analysis\122_20_2025-07-17_09-04-48_exp62_col_02_ROOT1_FishEyeCorrected\122_20_2025-07-17_09-04-48_exp62_col_02_ROOT1_FishEyeCorrected](demo_image_mask.png)
 
 ### Validated runtime
 
@@ -567,7 +569,9 @@ Representative products include:
 run_parameters.json
 ```
 
-The first QC check should be the generated overlay image. The RootCam-derived masks should align correctly with the fluorescence image.
+The first QC check should be the generated overlay image. The RootCam-derived masks should align correctly with the fluorescence image. `demo_Ft_1_overlay.png` is the expected output for a single plant, namely plant 3:
+
+![Expected output under demo\FC1_analysis\122_20_exp62_col_02_FC1_FcTar\plant3\Ft_1](demo_Ft_1_overlay.png)
 
 ### Validated runtime
 
@@ -635,7 +639,9 @@ run-parameter JSON files
 master_summary.csv
 ```
 
-The first QC check should be `*_OverlayQualityCheck.png`. Registered RootCam masks should overlap the corresponding structures in the hyperspectral image.
+The first QC check should be `*_OverlayQualityCheck.png`. Registered RootCam masks should overlap the corresponding structures in the hyperspectral image. `demo_Ft_1_overlay.png` is the expected output for plant 3:
+
+![Expected output under \demo\VNIR2\Analysis\122_19_2025-07-16_15-24-09_exp62_col_02_VNIR2_Data\plant_3](demo_Ft_1_overlay.png)
 
 ### Validated runtime
 

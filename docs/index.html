@@ -7,13 +7,98 @@
 <meta name="description" content="Reviewer-facing HADES resource center for the method paper submission.">
 <style>
 :root{color-scheme:only light;--fg:#202124;--muted:#5f6368;--line:#dadce0;--link:#1558a6;--highlight:#fff176;--highlight-border:#e0b400;--pending:#8a5b00}
-*{box-sizing:border-box}html,body{background:#fff}body{margin:0;color:var(--fg);font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}main{max-width:980px;margin:0 auto;padding:46px 28px 76px}h1{margin:0 0 10px;font-size:2.1rem;line-height:1.2}h2{margin:52px 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);font-size:1.48rem}h3{margin:34px 0 12px;font-size:1.18rem}h4{margin:25px 0 10px;font-size:1rem}p{margin:0 0 13px}a{color:var(--link);text-underline-offset:2px}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}nav{margin:26px 0 0;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}nav a{display:inline-block;margin:3px 18px 3px 0}.status{margin:22px 0 0;padding:13px 16px;border-left:4px solid #8ab4f8;background:#f6f9fe}.method-link{margin:12px 0 18px;padding:12px 15px;background:var(--highlight);border-left:5px solid var(--highlight-border);font-weight:500}.method-link strong{font-weight:750}blockquote{margin:16px 0;padding:8px 14px;border-left:3px solid var(--line);color:var(--muted)}ul,ol{padding-left:24px}li{margin-bottom:7px}dl{margin:12px 0}img[alt="DOI"]{vertical-align:middle;height:20px}.partner-links{display:flex;flex-wrap:wrap;align-items:center;gap:28px 42px;margin-top:18px}.partner-links a{display:inline-flex;align-items:center;gap:12px;color:var(--fg);text-decoration:none}.partner-links a:hover span{text-decoration:underline}.partner-links img{display:block;max-height:52px;max-width:140px;width:auto;object-fit:contain}.partner-links img.npec{max-height:58px;max-width:72px}.partner-links img.psi{max-height:48px;max-width:130px}.partner-links img.cropxr{max-width:155px;max-height:44px}footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}@media(max-width:640px){main{padding:30px 18px 54px}.partner-links{display:block}.partner-links a{display:flex;margin:20px 0}}
+*{box-sizing:border-box}html,body{background:#fff}body{margin:0;color:var(--fg);font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}main{max-width:980px;margin:0 auto;padding:46px 28px 76px}h1{margin:0 0 10px;font-size:2.1rem;line-height:1.2}h2{margin:52px 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);font-size:1.48rem}h3{margin:34px 0 12px;font-size:1.18rem}h4{margin:25px 0 10px;font-size:1rem}p{margin:0 0 13px}a{color:var(--link);text-underline-offset:2px}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}.top-nav{margin:26px 0 0;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.top-nav a{display:inline-block;margin:3px 18px 3px 0}.status{margin:22px 0 0;padding:13px 16px;border-left:4px solid #8ab4f8;background:#f6f9fe}.method-link{margin:12px 0 18px;padding:12px 15px;background:var(--highlight);border-left:5px solid var(--highlight-border);font-weight:500}.method-link strong{font-weight:750}blockquote{margin:16px 0;padding:8px 14px;border-left:3px solid var(--line);color:var(--muted)}ul,ol{padding-left:24px}li{margin-bottom:7px}dl{margin:12px 0}img[alt="DOI"]{vertical-align:middle;height:20px}.partner-links{display:flex;flex-wrap:wrap;align-items:center;gap:28px 42px;margin-top:18px}.partner-links a{display:inline-flex;align-items:center;gap:12px;color:var(--fg);text-decoration:none}.partner-links a:hover span{text-decoration:underline}.partner-links img{display:block;max-height:52px;max-width:140px;width:auto;object-fit:contain}.partner-links img.npec{max-height:58px;max-width:72px}.partner-links img.psi{max-height:48px;max-width:130px}.partner-links img.cropxr{max-width:155px;max-height:44px}footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}@media(max-width:640px){main{padding:30px 18px 54px}.partner-links{display:block}.partner-links a{display:flex;margin:20px 0}}
 pre { overflow-x:auto; padding:14px 16px; background:#f6f8fa; border:1px solid var(--line); border-radius:4px; }
+
+
+
+/* Collapsible left-side page guide */
+:root{--toc-width:292px;--toc-accent:#1a73e8;--toc-active:#eef4ff}
+html{scroll-behavior:smooth;scroll-padding-top:22px}
+body{overflow-x:hidden}
+main{transition:none}
+.toc-open-button{position:fixed;z-index:120;left:14px;top:16px;height:42px;padding:0 13px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--fg);display:flex;align-items:center;gap:8px;font:600 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;cursor:pointer;transition:opacity .15s ease,transform .2s ease}
+.toc-open-button:hover{background:#f6f8fa}
+.toc-open-button svg{width:17px;height:17px;stroke:currentColor}
+body.toc-open .toc-open-button{opacity:0;pointer-events:none;transform:translateX(-10px)}
+.toc-drawer{position:fixed;z-index:130;inset:0 auto 0 0;width:var(--toc-width);background:#fff;border-right:1px solid var(--line);transform:translateX(calc(-1 * var(--toc-width) - 8px));transition:transform .22s ease;display:flex;flex-direction:column}
+body.toc-open .toc-drawer{transform:translateX(0)}
+.toc-header{display:flex;align-items:center;justify-content:space-between;padding:17px 16px 12px 18px;border-bottom:1px solid #eceff1}
+.toc-title{font-size:.84rem;font-weight:750;letter-spacing:.02em;text-transform:uppercase;color:var(--muted)}
+.toc-close{width:34px;height:34px;border:0;border-radius:50%;background:transparent;color:var(--muted);display:grid;place-items:center;cursor:pointer}
+.toc-close:hover{background:#f1f3f4;color:var(--fg)}
+.toc-close svg{width:18px;height:18px;stroke:currentColor}
+.toc-nav{padding:10px 10px 22px;overflow:auto;overscroll-behavior:contain;scrollbar-width:none;-ms-overflow-style:none}
+.toc-nav::-webkit-scrollbar{display:none;width:0;height:0}
+.toc-nav a{position:relative;display:block;margin:1px 0;padding:7px 10px 7px 13px;border-radius:7px;color:#3c4043;text-decoration:none;line-height:1.28;transition:background .12s ease,color .12s ease}
+.toc-nav a:hover{background:#f6f8fa;color:var(--fg)}
+.toc-nav .toc-group{margin-top:4px;font-size:.94rem;font-weight:650}
+.toc-nav .toc-sub{padding-left:25px;font-size:.89rem;color:#5f6368}
+.toc-nav a[aria-current="location"]{background:var(--toc-active);color:#174ea6;font-weight:700}
+.toc-nav a[aria-current="location"]::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:3px;border-radius:3px;background:var(--toc-accent)}
+.toc-backdrop{position:fixed;z-index:125;inset:0;border:0;background:rgba(32,33,36,.28);opacity:0;pointer-events:none;transition:opacity .2s ease;cursor:pointer}
+body.toc-open .toc-backdrop{opacity:1;pointer-events:auto}
+.video-embed{display:block;width:100%;max-width:672px;height:auto;aspect-ratio:672/378;border:0;margin:4px 0 20px}
+@media(min-width:1380px){
+  body.toc-open .toc-backdrop{opacity:0;pointer-events:none}
+}
+@media(max-width:640px){
+  :root{--toc-width:min(86vw,310px)}
+  .toc-open-button{left:10px;top:10px;height:40px;padding:0 11px}
+  .toc-open-button span{display:none}
+  .toc-drawer{box-shadow:none}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .toc-drawer,.toc-open-button,.toc-backdrop{transition:none}
+}
+
 </style>
 </head>
-<body><main>
+<body>
+<button class="toc-open-button" id="toc-open" type="button" aria-controls="toc-drawer" aria-expanded="false">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke-width="2" stroke-linecap="round"/></svg>
+  <span>Contents</span>
+</button>
+<aside class="toc-drawer" id="toc-drawer" aria-label="Table of contents">
+  <div class="toc-header">
+    <div class="toc-title">On this page</div>
+    <button class="toc-close" id="toc-close" type="button" aria-label="Collapse page guide">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m15 6-6 6 6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  <nav class="toc-nav" id="toc-nav" aria-label="Page guide">
+<a class="toc-group" href="#project">Project</a>
+      <a class="toc-group" href="#method-paper">Method paper</a>
+      <a class="toc-group" href="#datasets">Experiment datasets</a>
+      <a class="toc-sub" href="#exp32">Exp32</a>
+      <a class="toc-sub" href="#exp35">Exp35</a>
+      <a class="toc-sub" href="#exp44">Exp44</a>
+      <a class="toc-sub" href="#exp62">Exp62</a>
+      <a class="toc-sub" href="#exp68">Exp68</a>
+      <a class="toc-group" href="#analysis-code">Analysis code</a>
+      <a class="toc-sub" href="#analysis-root">ROOT / PyPhenotyper</a>
+      <a class="toc-sub" href="#analysis-fc">Fluorescence / HADES_FC</a>
+      <a class="toc-sub" href="#analysis-vnir">VNIR / HADES_HSI</a>
+      <a class="toc-group" href="#software-demo">Software reproducibility demo</a>
+      <a class="toc-group" href="#video">Supplementary videos</a>
+      <a class="toc-sub" href="#video-s1">Video S1</a>
+      <a class="toc-sub" href="#video-s2">Video S2</a>
+      <a class="toc-sub" href="#video-s3">Video S3</a>
+      <a class="toc-sub" href="#video-s4">Video S4</a>
+      <a class="toc-sub" href="#video-s5">Video S5</a>
+      <a class="toc-group" href="#data-descriptor">Data Descriptor</a>
+      <a class="toc-sub" href="#data-descriptor-abstract">Abstract</a>
+      <a class="toc-sub" href="#data-descriptor-rebuilder">psi_export_rebuilder</a>
+      <a class="toc-sub" href="#data-descriptor-registry">HADES variable registry</a>
+      <a class="toc-group" href="#services">Repository services</a>
+      <a class="toc-group" href="#partners">Partners</a>
+  </nav>
+</aside>
+<button class="toc-backdrop" id="toc-backdrop" type="button" aria-label="Close page guide"></button>
+<main>
 <h1>HADES research resources</h1>
-<p>A lightweight companion hub for the HADES project, connecting the <strong>method paper</strong>, experiment-level datasets, analysis code, supplementary workflow video, the companion <strong>Data Descriptor</strong>, and reusable data-publication resources.</p><nav aria-label="Page sections"><a href="#project">Project</a><a href="#method-paper">Method paper</a><a href="#datasets">Experiment datasets</a><a href="#analysis-code">Analysis code</a>
+<p>A lightweight companion hub for the HADES project, connecting the <strong>method paper</strong>, experiment-level datasets, analysis code, supplementary workflow video, the companion <strong>Data Descriptor</strong>, and reusable data-publication resources.</p><nav class="top-nav" aria-label="Page sections"><a href="#project">Project</a><a href="#method-paper">Method paper</a><a href="#datasets">Experiment datasets</a><a href="#analysis-code">Analysis code</a>
     <a href="#software-demo">Software demo</a><a href="#video">Supplementary video</a><a href="#data-descriptor">Data Descriptor</a><a href="#services">Repository services</a><a href="#partners">Partners</a></nav>
 <div class="status"><strong>Resource status — 21 September 2026.</strong> The HADES method paper has been submitted. Exp32, Exp35, Exp44 and Exp68 have public Zenodo records. Exp62 has been submitted to the e!DAL Plant Genomics and Phenomics Research Data Repository (PGP) and is awaiting repository review; while review is pending, an anonymous SURFdrive preview/download link provides an exact copy of the content submitted to PGP.</div>
 <h2 id="project">Project</h2>
@@ -22,7 +107,7 @@ pre { overflow-x:auto; padding:14px 16px; background:#f6f8fa; border:1px solid v
 <h2 id="method-paper">Method paper</h2>
 <p><strong>Title:</strong> <em>HADES: high-throughput end-to-end automation of multimodal phenotyping for root-microbe interactions</em><br/>
 <strong>Status:</strong> Submitted; reference / DOI to add when available.</p>
-<h3>Abstract</h3>
+<h3 id="data-descriptor-abstract">Abstract</h3>
 <p>High-throughput analysis of root system architecture and plant-microbe interactions is constrained by limited reproducibility, labour-intensive workflows, and low-throughput multimodal imaging under sterile conditions. Here, we present HADES, a fully automated phenotyping platform integrating media preparation, seed selection and sowing, robotic bacterial inoculation, environmental control, and time-resolved imaging of up to 2,160 Petri dishes in parallel. HADES combines bright-field, fluorescence, and hyperspectral imaging with deep-learning-based analysis to quantify root architecture, reporter activity, microbial colonisation, and metabolite-associated spectral signatures. We demonstrate its versatility by resolving coumarin-dependent differences in <em>Arabidopsis thaliana</em> root development and metabolite-associated fluorescence, simultaneously monitoring auxin signalling and colonisation by root-colonising <em>Pseudomonas simiae</em> WCS417 bacteria, and screening a bacterial transposon-mutant collection for altered plant-associated phenotypes. HADES provides a scalable, sterile, and flexible platform for reproducible functional genomics and plant-microbiome research, enabling high-throughput mechanistic dissection of plant-microbe interactions.</p>
 <h2 id="datasets">Experiment datasets</h2>
 <p>The experiment records and the method-paper figure sources serve different purposes. The <strong>public experiment datasets</strong> preserve acquisition-level records, PlantScreen Data Analyzer outputs, reviewed metadata, variable definitions, manifests and provenance. The large customized ROOT, fluorescence and hyperspectral downstream result trees used for the method-paper analyses are not duplicated in these dataset records; their code is maintained separately under <a href="#analysis-code">Analysis code</a>. The lightweight tables under <a href="https://github.com/NPEC-NL/hades-research-resources/tree/main/source"><code>/source</code></a> are the direct quantitative inputs used for method-paper figures and are provided for transparent figure provenance.</p>
@@ -86,7 +171,7 @@ pre { overflow-x:auto; padding:14px 16px; background:#f6f8fa; border:1px solid v
 <strong>Licence:</strong> CC BY 4.0<br/>
 <strong>Release scope:</strong> Full eight-genotype Exp62 batch; Arabidopsis Data Descriptor reference record<br/>
 <strong>Product form:</strong> Repository-browsable<br/>
-<strong>Submitted data payload:</strong> 637.435 GB<br/>
+<strong>Submitted data payload:</strong> 579.4 GB<br/>
 <strong>Reviewed scope:</strong> 149 plates; 745 plant-position rows</p>
 <p><strong>Dataset description:</strong> Multimodal <i>Arabidopsis thaliana</i> phenotyping dataset combining Boxeed seed imaging/selection records with VNIR hyperspectral fluorescence acquisition under iron-deficient conditions across eight genotypes. The method paper uses the Col-0, f6′h1, cyp82c4 and s8h subset for its hyperspectral demonstration, while the public release preserves the complete eight-genotype experiment.</p>
 <ul>
@@ -116,17 +201,17 @@ pre { overflow-x:auto; padding:14px 16px; background:#f6f8fa; border:1px solid v
 <ul><li><a href="https://github.com/NPEC-NL/hades-research-resources/blob/main/source/masterfile_exp68_FC1_mTurquoise_25DAG.xlsx"><code>masterfile_exp68_FC1_mTurquoise_25DAG.xlsx</code></a> — longitudinal mTurquoise2 reporter measurements used for the auxin-responsive fluorescence analysis.</li><li><a href="https://github.com/NPEC-NL/hades-research-resources/blob/main/source/masterfile_exp68_mcheery_FC2.xlsx"><code>masterfile_exp68_mcheery_FC2.xlsx</code></a> — longitudinal mCherry-channel measurements used for WCS417 bacterial-colonisation analysis.</li><li><a href="https://github.com/NPEC-NL/hades-research-resources/blob/main/source/exp68_auc_results_bacteria_FC2.csv"><code>exp68_auc_results_bacteria_FC2.csv</code></a> — area-under-the-curve statistical results for the Exp68 bacterial fluorescence comparisons.</li></ul>
 <h2 id="analysis-code">Analysis code</h2>
 <p>The experiment deposits preserve acquisition and vendor-generated records. The customized analysis code used for the method paper is maintained separately so that segmentation, registration and figure-level products can be regenerated without permanently duplicating large image-derived result trees.</p>
-<h3>ROOT / root architecture analysis pipeline</h3>
+<h3 id="analysis-root">ROOT / root architecture analysis pipeline</h3>
 <p><strong>Repository (fixed frozen branch):</strong> <a href="https://github.com/NPEC-NL/pyphenotyper/tree/hades-paper-frozen">github.com/NPEC-NL/pyphenotyper/tree/hades-paper-frozen</a><br/>
 <strong>Frozen release page:</strong> <a href="https://github.com/NPEC-NL/pyphenotyper/releases/tag/hades-method-submission-2026-08-26">hades-method-submission-2026-08-26</a><br/>
 <strong>Frozen archive DOI:</strong> <a href="https://doi.org/10.5281/zenodo.22283635"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.22283635.svg"/></a></p>
 <p>Processes monochromatic backlit RootCam images through plate detection/cropping, U-Net-based seedling segmentation, skeletonization and graph-based root reconstruction. Dijkstra's shortest-path algorithm reconstructs the primary root between the root-shoot junction and primary-root tip. Outputs include shoot size, primary-root length, lateral-root length, lateral-root number, nodes and tips, together with structural masks reused by the fluorescence and hyperspectral workflows.</p>
-<h3>Fluorescence analysis — HADES_FC</h3>
+<h3 id="analysis-fc">Fluorescence analysis — HADES_FC</h3>
 <p><strong>Repository:</strong> <a href="https://github.com/valerian-meline/HADES_FC">github.com/valerian-meline/HADES_FC</a><br/>
 <strong>Frozen release page:</strong> <a href="https://github.com/valerian-meline/HADES_FC/releases/tag/hades-method-submission-2026-08-26">hades-method-submission-2026-08-26</a><br/>
 <strong>Frozen archive DOI:</strong> <a href="https://doi.org/10.5281/zenodo.22876406"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.22876406.svg"/></a></p>
 <p>Uses masks from corresponding monochromatic RootCam images to quantify fluorescence without re-segmenting fluorescence frames. Geometric registration aligns modalities; region-specific measurements cover the root system, primary and lateral roots, root tip, nodes, shoot and a dilated peri-root/rhizosphere region. Mean intensity, total signal and pixel counts support reporter, microbial-colonization and coumarin-associated fluorescence analyses.</p>
-<h3>VNIR hyperspectral analysis — HADES_HSI</h3>
+<h3 id="analysis-vnir">VNIR hyperspectral analysis — HADES_HSI</h3>
 <p><strong>Repository:</strong> <a href="https://github.com/valerian-meline/HADES_HSI">github.com/valerian-meline/HADES_HSI</a><br/>
 <strong>Frozen release page:</strong> <a href="https://github.com/valerian-meline/HADES_HSI/releases/tag/hades-method-submission-2026-08-26">hades-method-submission-2026-08-26</a><br/>
 <strong>Frozen archive DOI:</strong> <a href="https://doi.org/10.5281/zenodo.22876358"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.22876358.svg"/></a></p>
@@ -155,10 +240,26 @@ pre { overflow-x:auto; padding:14px 16px; background:#f6f8fa; border:1px solid v
 <p>The detailed guide documents the tested Windows CPU workflow, recommended Python environments, deterministic ROOT TIFF-to-PNG conversion, expected outputs, measured runtimes, troubleshooting, and a concise reviewer verification path.</p>
 
 <h2 id="video">Supplementary video</h2>
-<h3>Supplementary Video S1 — Automated workflow of the HADES platform</h3>
+<h3 id="video-s1">Supplementary Video S1 — Automated workflow of the HADES platform</h3>
 <p><strong>YouTube:</strong> <a href="https://youtu.be/F-a306otM4A">youtu.be/F-a306otM4A</a></p>
 <p>Demonstration of the fully automated HADES workflow, from preparation of plant growth plates and imaging-based seed selection with robotic sowing, through refrigerated stratification and climate-controlled cultivation, to RootCam and hyperspectral phenotyping followed by sterile robotic microbial inoculation. Robotic transfer systems connect the modules for continuous, unattended cultivation, phenotyping and experimental manipulation.</p>
-<iframe width="672" height="378" src="https://www.youtube.com/embed/F-a306otM4A" title="Video S1. Automated workflow of the HADES platform." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="video-embed" src="https://www.youtube.com/embed/F-a306otM4A" title="Video S1. Automated workflow of the HADES platform." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<h3 id="video-s2">Supplementary Video S2 — Automated root segmentation and longitudinal tracking in HADES</h3>
+<p><strong>YouTube:</strong> <a href="https://www.youtube.com/watch?v=rqZrqshpGcw">https://www.youtube.com/watch?v=rqZrqshpGcw</a></p>
+<p>Time-lapse RootCam imaging of <i>Arabidopsis thaliana</i> Col-0 showing the automated HADES root-analysis workflow across successive imaging time points. The video illustrates longitudinal plant tracking, root/shoot segmentation and extraction of root-system architecture measurements used for the method-paper analysis associated with Figure 2.</p>
+<iframe class="video-embed" src="https://www.youtube.com/embed/rqZrqshpGcw" title="Supplementary Video S2. Automated root segmentation and longitudinal tracking in HADES." allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<h3 id="video-s3">Supplementary Video S3 — Dual-channel auxin signalling and WCS417 colonisation in Arabidopsis</h3>
+<p><strong>YouTube:</strong> <a href="https://www.youtube.com/watch?v=S5Xl6s9WQcM">https://www.youtube.com/watch?v=S5Xl6s9WQcM</a></p>
+<p>Longitudinal dual-channel fluorescence imaging of DR5v2::mTurquoise2 <i>Arabidopsis</i> together with WCS417-mCherry. RootCam-derived masks are used to register the fluorescence channels, allowing auxin-responsive reporter signal and bacterial colonisation to be followed along the root system. This video accompanies the method-paper analysis associated with Figure 3 and Exp68.</p>
+<iframe class="video-embed" src="https://www.youtube.com/embed/S5Xl6s9WQcM" title="Supplementary Video S3. Dual-channel auxin signalling and WCS417 colonisation in Arabidopsis." allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<h3 id="video-s4">Supplementary Video S4 — Longitudinal bacterial colonisation of potato roots</h3>
+<p><strong>YouTube:</strong> <a href="https://www.youtube.com/watch?v=oWgu6D1o7_U">https://www.youtube.com/watch?v=oWgu6D1o7_U</a></p>
+<p>Time-resolved RootCam and mCherry fluorescence imaging of potato roots inoculated with fluorescent <i>Pseudomonas</i> strains. The video illustrates longitudinal bacterial colonisation along the root system and the fluorescence-based analysis used for the Exp35 potato experiment and Supplementary Figure S3.</p>
+<iframe class="video-embed" src="https://www.youtube.com/embed/oWgu6D1o7_U" title="Supplementary Video S4. Longitudinal bacterial colonisation of potato roots." allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<h3 id="video-s5">Supplementary Video S5 — Coumarin-associated fluorescence dynamics in Arabidopsis</h3>
+<p><strong>YouTube:</strong> <a href="https://www.youtube.com/watch?v=aG26yrAFsBg">https://www.youtube.com/watch?v=aG26yrAFsBg</a></p>
+<p>Longitudinal fluorescence imaging of <i>Arabidopsis thaliana</i> Col-0 and the coumarin-biosynthesis mutants f6′h1, cyp82c4 and s8h under iron-deficient conditions. The video illustrates genotype-dependent coumarin-associated fluorescence dynamics analysed in Exp32 and the method-paper figure on coumarin-associated fluorescence.</p>
+<iframe class="video-embed" src="https://www.youtube.com/embed/aG26yrAFsBg" title="Supplementary Video S5. Coumarin-associated fluorescence dynamics in Arabidopsis." allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <h2 id="data-descriptor">Data Descriptor</h2>
 <p><strong>Title:</strong> <em>Longitudinal multimodal Arabidopsis root phenotyping data from an automated platform</em><br/>
 <strong>Status:</strong> Pending submission.<br/>
@@ -166,7 +267,7 @@ pre { overflow-x:auto; padding:14px 16px; background:#f6f8fa; border:1px solid v
 <h3>Abstract</h3>
 <p>Automated root phenotyping platforms generate large, time-resolved image collections whose reuse depends on experimental context, variable definitions and links between sensor records. This Data Descriptor presents three Arabidopsis experiments generated with HADES (High-throughput Automated Device for End-to-end Screening), covering longitudinal RootCam imaging, fluorescence, VNIR hyperspectral records, vendor-generated analysis products and, for Exp62, Boxeed seed records. HADES acquisition, vendor-side analysis and export are managed through PlantScreen, the vendor software environment used by the platform. Each experiment is released with reviewed metadata, a package-scoped HADES variable-registry snapshot, manifests, checksums and minimal raw-format loaders. The registry provides stable definitions, methods and scales for machine- and pipeline-generated measurements. <code>psi_export_rebuilder</code>, an open-source release tool developed for these records, converts readable PlantScreen exports into traceable research products while preserving mappings for controlled facility-side recovery. Large downstream segmentation, alignment and figure-generation trees are excluded because they largely duplicate acquisition images and can be regenerated from archived analysis code. Together, these resources support reuse of longitudinal multimodal root-phenotyping data outside the vendor environment.</p>
 <p><strong>Keywords:</strong> HADES; plant phenotyping; root imaging; fluorescence imaging; hyperspectral imaging; longitudinal imaging; FAIR data</p>
-<h3>psi_export_rebuilder</h3>
+<h3 id="data-descriptor-rebuilder">psi_export_rebuilder</h3>
 <p><strong>GitHub repository:</strong> <a href="https://github.com/NPEC-NL/psi-export-rebuilder">github.com/NPEC-NL/psi-export-rebuilder</a><br/>
 <strong>Frozen version used to create the reference datasets:</strong> <code>0.1.0</code><br/>
 <strong>Current convenience release:</strong> <a href="https://github.com/NPEC-NL/psi-export-rebuilder/releases/tag/v0.1.1">v0.1.1</a> - adds an easy one-key run script for decompressing/reconstructing archive-optimized products; it does not change the deposited datasets or the release algorithm.<br/>
@@ -179,7 +280,7 @@ pre { overflow-x:auto; padding:14px 16px; background:#f6f8fa; border:1px solid v
 </ul>
 <p>Exp32 was also used for the complete facility round-trip test: the rebuilt product was reverse-transformed to the NPEC internal recovery layout, loaded into the NPEC PlantScreen environment, and used to regenerate a fresh PlantScreen Data Analyzer user-export tar with PlantScreen Data Analyzer 3.4.28.0.</p>
 <p>System-specific source rules are isolated in adapters so the generic release workflow can be reused for other PlantScreen-derived installations after their local layouts and variables have been audited. A separate stewardship Article is in preparation to evaluate this broader architecture, storage strategy and adaptation beyond HADES; it is not required to interpret the HADES experiment records described in the Data Descriptor.</p>
-<h3>HADES variable registry</h3>
+<h3 id="data-descriptor-registry">HADES variable registry</h3>
 <p><strong>Registry:</strong> <a href="https://github.com/NPEC-NL/hades-registry">github.com/NPEC-NL/hades-registry</a><br/>
 <strong>Frozen version used by the reference release:</strong> <code>1.0.0</code><br/>
 <strong>Archive DOI:</strong> <a href="https://doi.org/10.5281/zenodo.22240635"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.22240635.svg"/></a></p>
@@ -194,4 +295,80 @@ pre { overflow-x:auto; padding:14px 16px; background:#f6f8fa; border:1px solid v
 
 
 <footer>HADES research resources · status 22 September 2026</footer>
-</main></body></html>
+</main>
+
+<script>
+(() => {
+  const body = document.body;
+  const openButton = document.getElementById('toc-open');
+  const closeButton = document.getElementById('toc-close');
+  const backdrop = document.getElementById('toc-backdrop');
+  const nav = document.getElementById('toc-nav');
+  const links = [...nav.querySelectorAll('a[href^="#"]')];
+  const targets = links
+    .map(link => ({ link, target: document.getElementById(link.getAttribute('href').slice(1)) }))
+    .filter(item => item.target);
+
+  const setOpen = (open, remember = true) => {
+    body.classList.toggle('toc-open', open);
+    openButton.setAttribute('aria-expanded', String(open));
+    if (remember) localStorage.setItem('hades-toc-open', open ? '1' : '0');
+  };
+
+  const saved = localStorage.getItem('hades-toc-open');
+  const defaultOpen = window.matchMedia('(min-width: 1180px)').matches;
+  setOpen(saved === null ? defaultOpen : saved === '1', false);
+
+  openButton.addEventListener('click', () => setOpen(true));
+  closeButton.addEventListener('click', () => setOpen(false));
+  backdrop.addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && body.classList.contains('toc-open')) setOpen(false);
+  });
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 1380) setOpen(false, false);
+    });
+  });
+
+  let ticking = false;
+  const updateActive = () => {
+    ticking = false;
+    const marker = window.scrollY + 120;
+    let active = targets[0];
+    for (const item of targets) {
+      if (item.target.offsetTop <= marker) active = item;
+      else break;
+    }
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 12) {
+      active = targets[targets.length - 1];
+    }
+    for (const item of targets) {
+      if (item === active) item.link.setAttribute('aria-current', 'location');
+      else item.link.removeAttribute('aria-current');
+    }
+    if (active && body.classList.contains('toc-open')) {
+      const linkTop = active.link.offsetTop;
+      const linkBottom = linkTop + active.link.offsetHeight;
+      const visibleTop = nav.scrollTop + 12;
+      const visibleBottom = nav.scrollTop + nav.clientHeight - 12;
+      if (linkTop < visibleTop || linkBottom > visibleBottom) {
+        active.link.scrollIntoView({ block: 'nearest' });
+      }
+    }
+  };
+  const scheduleActiveUpdate = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateActive);
+    }
+  };
+
+  window.addEventListener('scroll', scheduleActiveUpdate, { passive: true });
+  window.addEventListener('resize', scheduleActiveUpdate);
+  window.addEventListener('hashchange', scheduleActiveUpdate);
+  updateActive();
+})();
+</script>
+</body></html>

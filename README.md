@@ -119,7 +119,7 @@ Raw Sanger sequencing data for the 96 GFP-labelled *P. simiae* WCS417 mariner tr
 **Licence:** CC BY 4.0  
 **Release scope:** Full eight-genotype Exp62 batch; Arabidopsis Data Descriptor reference record  
 **Product form:** Repository-browsable  
-**Submitted data payload:** 637.435 GB  
+**Submitted data payload:** 579.4 GB  
 **Reviewed scope:** 149 plates; 745 plant-position rows
 
 **Dataset description:** Multimodal *Arabidopsis thaliana* phenotyping dataset combining Boxeed seed imaging/selection records with VNIR hyperspectral fluorescence acquisition under iron-deficient conditions across eight genotypes. The method paper uses the Col-0, f6′h1, cyp82c4 and s8h subset for its hyperspectral demonstration, while the public release preserves the complete eight-genotype experiment.
@@ -221,6 +221,30 @@ This is a software reproducibility demo, not a substitute for the full experimen
 **YouTube:** https://youtu.be/F-a306otM4A
 
 Demonstration of the fully automated HADES workflow, from preparation of plant growth plates and imaging-based seed selection with robotic sowing, through refrigerated stratification and climate-controlled cultivation, to RootCam and hyperspectral phenotyping followed by sterile robotic microbial inoculation. Robotic transfer systems connect the modules for continuous, unattended cultivation, phenotyping and experimental manipulation.
+
+### Supplementary Video S2 — Automated root segmentation and longitudinal tracking in HADES
+
+**YouTube:** https://www.youtube.com/watch?v=rqZrqshpGcw
+
+Time-lapse RootCam imaging of *Arabidopsis thaliana* Col-0 showing the automated HADES root-analysis workflow across successive imaging time points. The video illustrates longitudinal plant tracking, root/shoot segmentation and extraction of root-system architecture measurements used for the method-paper analysis associated with Figure 2.
+
+### Supplementary Video S3 — Dual-channel auxin signalling and WCS417 colonisation in Arabidopsis
+
+**YouTube:** https://www.youtube.com/watch?v=S5Xl6s9WQcM
+
+Longitudinal dual-channel fluorescence imaging of DR5v2::mTurquoise2 *Arabidopsis* together with WCS417-mCherry. RootCam-derived masks are used to register the fluorescence channels, allowing auxin-responsive reporter signal and bacterial colonisation to be followed along the root system. This video accompanies the method-paper analysis associated with Figure 3 and Exp68.
+
+### Supplementary Video S4 — Longitudinal bacterial colonisation of potato roots
+
+**YouTube:** https://www.youtube.com/watch?v=oWgu6D1o7_U
+
+Time-resolved RootCam and mCherry fluorescence imaging of potato roots inoculated with fluorescent *Pseudomonas* strains. The video illustrates longitudinal bacterial colonisation along the root system and the fluorescence-based analysis used for the Exp35 potato experiment and Supplementary Figure S3.
+
+### Supplementary Video S5 — Coumarin-associated fluorescence dynamics in Arabidopsis
+
+**YouTube:** https://www.youtube.com/watch?v=aG26yrAFsBg
+
+Longitudinal fluorescence imaging of *Arabidopsis thaliana* Col-0 and the coumarin-biosynthesis mutants f6′h1, cyp82c4 and s8h under iron-deficient conditions. The video illustrates genotype-dependent coumarin-associated fluorescence dynamics analysed in Exp32 and the method-paper figure on coumarin-associated fluorescence.
 
 ## Data Descriptor
 

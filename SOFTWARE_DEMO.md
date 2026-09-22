@@ -118,11 +118,19 @@ PyPhenotyper performs seedling segmentation, root-system reconstruction, primary
 
 https://github.com/valerian-meline/HADES_FC
 
+Archived release / software DOI:
+
+https://doi.org/10.5281/zenodo.22876405
+
 HADES_FC reads HADES fluorescence acquisitions, aligns fluorescence images to RootCam-derived masks, and exports pixel-level and summary fluorescence measurements together with registration overlays.
 
 ### Hyperspectral: HADES_HSI
 
 https://github.com/valerian-meline/HADES_HSI
+
+Archived release / software DOI:
+
+https://doi.org/10.5281/zenodo.22876357
 
 HADES_HSI processes the hyperspectral data used in the Nature Methods manuscript.
 

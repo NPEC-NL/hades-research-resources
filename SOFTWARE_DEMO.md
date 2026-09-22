@@ -110,7 +110,7 @@ https://github.com/NPEC-NL/pyphenotyper/tree/hades-paper-frozen
 
 Archived release / software DOI:
 
-https://doi.org/10.5281/zenodo.22283634
+https://doi.org/10.5281/zenodo.22283635
 
 PyPhenotyper performs seedling segmentation, root-system reconstruction, primary/lateral-root assignment, landmark extraction, and morphology measurement.
 
@@ -120,7 +120,7 @@ https://github.com/valerian-meline/HADES_FC
 
 Archived release / software DOI:
 
-https://doi.org/10.5281/zenodo.22876405
+https://doi.org/10.5281/zenodo.22876406
 
 HADES_FC reads HADES fluorescence acquisitions, aligns fluorescence images to RootCam-derived masks, and exports pixel-level and summary fluorescence measurements together with registration overlays.
 
@@ -130,7 +130,7 @@ https://github.com/valerian-meline/HADES_HSI
 
 Archived release / software DOI:
 
-https://doi.org/10.5281/zenodo.22876357
+https://doi.org/10.5281/zenodo.22876358
 
 HADES_HSI processes the hyperspectral data used in the Nature Methods manuscript.
 
@@ -808,15 +808,15 @@ Consult the `LICENSE` file in each software repository for the authoritative lic
 
 The frozen PyPhenotyper HADES release is archived at:
 
-https://doi.org/10.5281/zenodo.22283634
+https://doi.org/10.5281/zenodo.22283635
 
 HADES_FC:
 
-https://doi.org/10.5281/zenodo.22876405
+https://doi.org/10.5281/zenodo.22876406
 
 HADES_HSI:
 
-https://doi.org/10.5281/zenodo.22876357
+https://doi.org/10.5281/zenodo.22876358
 
 ## 24. Data
 

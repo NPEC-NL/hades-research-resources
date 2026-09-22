@@ -3,7 +3,7 @@
 A lightweight companion hub for the HADES project, connecting the **method paper**, experiment-level datasets, analysis code, a reviewer-oriented software reproducibility demo, supplementary workflow video, the companion **Data Descriptor**, and reusable data-publication resources.
 
 > [!NOTE]
-> **Resource status -- 21 September 2026.** The HADES method paper has been submitted. Exp32, Exp35, Exp44 and Exp68 have public Zenodo records. Exp62 has been submitted to the e!DAL Plant Genomics and Phenomics Research Data Repository (PGP) and is awaiting repository review; while review is pending, an anonymous SURFdrive preview/download link provides an exact copy of the content submitted to PGP. The companion Data Descriptor has been submitted to bioRxiv and is awaiting a DOI.
+> **Resource status -- 22 September 2026.** The HADES method paper has been submitted. Exp32, Exp35, Exp44 and Exp68 have public Zenodo records. Exp62 has been submitted to the e!DAL Plant Genomics and Phenomics Research Data Repository (PGP) and is awaiting repository review; while review is pending, an anonymous SURFdrive preview/download link provides an exact copy of the content submitted to PGP.
 
 ## Project
 
@@ -169,7 +169,7 @@ The experiment deposits preserve acquisition and vendor-generated records. The c
 
 **Repository (fixed frozen branch):** https://github.com/NPEC-NL/pyphenotyper/tree/hades-paper-frozen  
 **Frozen release page:** https://github.com/NPEC-NL/pyphenotyper/releases/tag/hades-method-submission-2026-08-26  
-**Frozen archive DOI:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22283634.svg)](https://doi.org/10.5281/zenodo.22283634)
+**Frozen archive DOI:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22283635.svg)](https://doi.org/10.5281/zenodo.22283635)
 
 Processes monochromatic backlit RootCam images through plate detection/cropping, U-Net-based seedling segmentation, skeletonization and graph-based root reconstruction. Dijkstra's shortest-path algorithm reconstructs the primary root between the root-shoot junction and primary-root tip. Outputs include shoot size, primary-root length, lateral-root length, lateral-root number, nodes and tips, together with structural masks reused by the fluorescence and hyperspectral workflows.
 
@@ -177,7 +177,7 @@ Processes monochromatic backlit RootCam images through plate detection/cropping,
 
 **Repository:** https://github.com/valerian-meline/HADES_FC  
 **Frozen release page:** https://github.com/valerian-meline/HADES_FC/releases/tag/hades-method-submission-2026-08-26  
-**Frozen archive DOI:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22876405.svg)](https://doi.org/10.5281/zenodo.22876405)
+**Frozen archive DOI:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22876406.svg)](https://doi.org/10.5281/zenodo.22876406)
 
 Uses masks from corresponding monochromatic RootCam images to quantify fluorescence without re-segmenting fluorescence frames. Geometric registration aligns modalities; region-specific measurements cover the root system, primary and lateral roots, root tip, nodes, shoot and a dilated peri-root/rhizosphere region. Mean intensity, total signal and pixel counts support reporter, microbial-colonization and coumarin-associated fluorescence analyses.
 
@@ -185,7 +185,7 @@ Uses masks from corresponding monochromatic RootCam images to quantify fluoresce
 
 **Repository:** https://github.com/valerian-meline/HADES_HSI  
 **Frozen release page:** https://github.com/valerian-meline/HADES_HSI/releases/tag/hades-method-submission-2026-08-26  
-**Frozen archive DOI:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22876357.svg)](https://doi.org/10.5281/zenodo.22876357)
+**Frozen archive DOI:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22876358.svg)](https://doi.org/10.5281/zenodo.22876358)
 
 Processes VNIR fluorescence cubes using dark-reference correction, spectral smoothing and spatial filtering. RootCam masks are registered in two stages using a 670-nm leaf reference and a 410-nm root-enhanced reference. Registered root and peri-root regions are used to derive wavelength-resolved mean, summed and standard-deviation spectra plus pixel-level spectra and spatial coordinates.
 
@@ -225,7 +225,7 @@ Demonstration of the fully automated HADES workflow, from preparation of plant g
 ## Data Descriptor
 
 **Title:** *Longitudinal multimodal Arabidopsis root phenotyping data from an automated platform*  
-**Status:** Submitted to bioRxiv; DOI pending.  
+**Status:** Pending submission.  
 **Scope:** Exp32, Exp62 and Exp68. Exp35 and Exp44 are linked supporting records but are not part of the three-experiment Data Descriptor release.
 
 ### Abstract

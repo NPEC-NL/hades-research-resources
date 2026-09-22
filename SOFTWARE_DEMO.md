@@ -810,7 +810,13 @@ The frozen PyPhenotyper HADES release is archived at:
 
 https://doi.org/10.5281/zenodo.22283634
 
-For HADES_FC and HADES_HSI, cite the version/release linked from the HADES research-resources page at the time of publication.
+HADES_FC:
+
+https://doi.org/10.5281/zenodo.22876405
+
+HADES_HSI:
+
+https://doi.org/10.5281/zenodo.22876357
 
 ## 24. Data
 

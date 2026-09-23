@@ -220,31 +220,30 @@ This is a software reproducibility demo, not a substitute for the full experimen
 
 **YouTube:** https://youtu.be/F-a306otM4A
 
-Demonstration of the fully automated HADES workflow, from preparation of plant growth plates and imaging-based seed selection with robotic sowing, through refrigerated stratification and climate-controlled cultivation, to RootCam and hyperspectral phenotyping followed by sterile robotic microbial inoculation. Robotic transfer systems connect the modules for continuous, unattended cultivation, phenotyping and experimental manipulation.
+Demonstration of the fully automated operation of the HADES platform. The video shows the sequential workflow from automated preparation of plant growth plates and imaging-based seed selection with robotic sowing, through refrigerated stratification and climate-controlled cultivation, to high-throughput phenotyping using RootCam and hyperspectral imaging, followed by sterile robotic microbial inoculation. Robotic transfer systems connect all hardware modules, enabling continuous, unattended plant cultivation, phenotyping, and experimental manipulation. Corresponding hardware stations are shown in Fig. 1.
 
 ### Supplementary Video S2 — Automated root segmentation and longitudinal tracking in HADES
 
 **YouTube:** https://www.youtube.com/watch?v=rqZrqshpGcw
 
-Time-lapse RootCam imaging of *Arabidopsis thaliana* Col-0 showing the automated HADES root-analysis workflow across successive imaging time points. The video illustrates longitudinal plant tracking, root/shoot segmentation and extraction of root-system architecture measurements used for the method-paper analysis associated with Figure 2.
+Time-lapse RootCam imaging of an *Arabidopsis thaliana* wild-type Col-0 seedling grown on iron-deficient Hoagland medium lacking Fe-EDTA and solidified with 0.8% Gelrite. Deep-learning-based image analysis automatically segments the primary and lateral root system and assigns key developmental landmarks, including the top and tip of the primary root, as well as the junctions and tips of individual lateral roots. The extracted root architecture is tracked throughout seedling development, enabling automated, high-throughput quantification of root growth dynamics and architectural traits over time. Corresponding images are shown in Fig. 2.
 
 ### Supplementary Video S3 — Dual-channel auxin signalling and WCS417 colonisation in Arabidopsis
 
 **YouTube:** https://www.youtube.com/watch?v=S5Xl6s9WQcM
 
-Longitudinal dual-channel fluorescence imaging of DR5v2::mTurquoise2 *Arabidopsis* together with WCS417-mCherry. RootCam-derived masks are used to register the fluorescence channels, allowing auxin-responsive reporter signal and bacterial colonisation to be followed along the root system. This video accompanies the method-paper analysis associated with Figure 3 and Exp68.
-
+Representative time-lapse fluorescence imaging of *Arabidopsis thaliana* Col-0 and DR5v2:mTurquoise2 reporter seedlings grown on Hoagland medium solidified with 0.8% Gelrite and inoculated with mCherry-labelled Pseudomonas simiae WCS417 (10⁵ CFU mL⁻¹). The video simultaneously visualises bacterial colonisation (mCherry channel) and auxin-responsive reporter activity (mTurquoise2 channel) during seedling development. Deep-learning-based root segmentation enables longitudinal quantification of fluorescence along the root system, allowing bacterial colonisation dynamics to be correlated with spatial and temporal changes in auxin-responsive signalling. Corresponding images and quantitative analyses are shown in Fig. 3.
 ### Supplementary Video S4 — Longitudinal bacterial colonisation of potato roots
 
 **YouTube:** https://www.youtube.com/watch?v=oWgu6D1o7_U
 
-Time-resolved RootCam and mCherry fluorescence imaging of potato roots inoculated with fluorescent *Pseudomonas* strains. The video illustrates longitudinal bacterial colonisation along the root system and the fluorescence-based analysis used for the Exp35 potato experiment and Supplementary Figure S3.
+Representative time-lapse RootCam imaging of *true potato seed* genotype HYB007 grown on Hoagland medium solidified with 0.8% Gelrite following inoculation with mCherry-labelled Pseudomonas capeferrum WCS358r at the root-shoot junction. The video shows simultaneous visualization of root architecture and bacterial fluorescence. In combination with deep-learning-based root segmentation, it enables automated longitudinal quantification of bacterial colonisation along the root system throughout seedling development. Corresponding images and quantitative analyses are presented in Supplemental Fig. S3.
 
 ### Supplementary Video S5 — Coumarin-associated fluorescence dynamics in Arabidopsis
 
 **YouTube:** https://www.youtube.com/watch?v=aG26yrAFsBg
 
-Longitudinal fluorescence imaging of *Arabidopsis thaliana* Col-0 and the coumarin-biosynthesis mutants f6′h1, cyp82c4 and s8h under iron-deficient conditions. The video illustrates genotype-dependent coumarin-associated fluorescence dynamics analysed in Exp32 and the method-paper figure on coumarin-associated fluorescence.
+Representative time-lapse RootCam imaging of *Arabidopsis thaliana* Col-0 and the coumarin biosynthesis mutants f6′h1, cyp82c4, and s8h grown on iron-deficient Hoagland medium lacking Fe-EDTA. The video visualises the temporal accumulation and spatial distribution of coumarin-associated autofluorescence during root development. Deep-learning-based root segmentation enables automated longitudinal quantification of fluorescence in the primary root, lateral roots, rhizosphere region, and shoot, revealing genotype-dependent differences in coumarin-associated fluorescence dynamics. Corresponding images and quantitative analyses are presented in Fig. 5.
 
 ## Data Descriptor
 

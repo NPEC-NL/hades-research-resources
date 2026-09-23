@@ -1,6 +1,6 @@
 # HADES software reproducibility demo
 
-This directory contains a small, real-data demonstration of the custom analysis software used in the HADES Nature Methods manuscript:
+This directory contains a small, real-data demonstration of the custom analysis software used in the HADES Methods manuscript:
 
 **HADES: high-throughput end-to-end automation of multimodal phenotyping for root-microbe interactions**
 
@@ -132,7 +132,7 @@ Archived release / software DOI:
 
 https://doi.org/10.5281/zenodo.22876358
 
-HADES_HSI processes the hyperspectral data used in the Nature Methods manuscript.
+HADES_HSI processes the hyperspectral data used in the HADES Methods manuscript.
 
 The manuscript uses **VNIR** as the generic name of the visible-to-near-infrared hyperspectral modality. In the PlantScreen export and in the analysis code, the actual sensor/export identifier used for the manuscript hyperspectral results is **`VNIR2`**. The other VNIR sensor is not required to reproduce the manuscript analyses.
 
@@ -592,7 +592,7 @@ conda activate fc-improvement
 cd path\to\HADES_HSI
 ```
 
-The hyperspectral records used by the Nature Methods manuscript are stored under the PlantScreen sensor/export identifier:
+The hyperspectral records used by the HADES Methods manuscript are stored under the PlantScreen sensor/export identifier:
 
 ```text
 VNIR2
